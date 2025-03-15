@@ -34,6 +34,25 @@ body {
     outline-offset: 2px;
 }
 
+/* Skip to content link */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    z-index: 100;
+    transition: top 0.3s;
+    text-decoration: none;
+    border-radius: 0 0 5px 5px;
+}
+
+.skip-to-content:focus {
+    top: 0;
+    outline: var(--focus-outline);
+}
+
 /* Header Styles */
 header {
     text-align: center;
@@ -173,32 +192,56 @@ header p {
     overflow: hidden; /* Hide overflowing content */
 }
 
-/* Base positioning for all carousel items */
+/* Carousel Item Styles */
 .carousel-item {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 30px; /* Uniform padding for all slides */
+    padding: 30px;
     opacity: 0;
-    transition: transform 0.5s ease, opacity 0.3s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 1;
 }
 
-/* Active item is centered */
+/* Active item */
 .carousel-item.active {
+    opacity: 1;
+    z-index: 5;
+}
+
+/* Items sliding left (when "next" button is clicked) */
+.carousel-item.slide-left {
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Items sliding right (when "previous" button is clicked) */
+.carousel-item.slide-right {
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Make the first item active by default */
+.carousel-item:first-child {
     opacity: 1;
     transform: translateX(0);
     z-index: 5;
 }
 
-/* Direction-specific classes */
-.carousel-item.slide-left {
-    transform: translateX(-100%); /* Position to left */
+/* Focus styling for better keyboard navigation */
+.carousel-wrapper:focus-within {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 4px;
 }
 
-.carousel-item.slide-right {
-    transform: translateX(100%); /* Position to right */
+/* Make sure tab focus is visible */
+.carousel-item:focus-within {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--primary-color);
 }
 
 /* Consistent content layout */
@@ -335,12 +378,21 @@ header p {
     transform: translateY(-50%) scale(1.1);
 }
 
+/* Focus styles for navigation elements */
+.arrow:focus {
+    outline: var(--focus-outline);
+    transform: translateY(-50%) scale(1.1);
+}
+
 /* Carousel Indicators */
 .carousel-indicators {
+    position: relative;
     display: flex;
     justify-content: center;
     gap: 12px;
     padding: 15px 0;
+    border: none; /* Ensure no border */
+    background: transparent; /* Ensure no background */
 }
 
 .indicator {
@@ -348,18 +400,28 @@ header p {
     height: 15px;
     border-radius: 50%;
     background: #ccc;
-    transition: background 0.3s, transform 0.2s;
     display: block;
-}
-
-.indicator.active {
-    background-color: var(--primary-color);
-    transform: scale(1.2);
+    position: relative;
 }
 
 .indicator:hover,
 .indicator:focus {
     background: var(--secondary-color);
+}
+
+/* Focus styles for indicators */
+.indicator:focus {
+    outline: var(--focus-outline);
+    transform: scale(1.3);
+}
+
+/* Style active indicators more prominently */
+.indicator.active, 
+.indicator:target {
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
 }
 
 /* Footer */
@@ -377,6 +439,7 @@ footer p {
     margin-bottom: 10px;
 }
 
+
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
     .carousel-item {
@@ -384,8 +447,13 @@ footer p {
         transform: none;
     }
     
-    .carousel-item.active {
+    .carousel-item.active,
+    .carousel-item:target {
         opacity: 1;
+    }
+    
+    .indicator::after {
+        transition: opacity 0.3s;
     }
 }
 
