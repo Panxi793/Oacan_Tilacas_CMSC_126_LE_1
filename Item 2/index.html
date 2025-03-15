@@ -1,237 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Old Reddit Replica</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-
-  <!-- Top Navigation Bar -->
-  <div class="topbar">
-    <div class="topbar-inner">
-      <!-- Left Section: Logo + Primary Nav -->
-      <div class="topbar-left">
-        <a href="#" class="reddit-icon" aria-label="Reddit Home">
-          <img src="images/reddit-logo" alt="Reddit Logo" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Old Reddit</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-top">
+        <a href="#" class="header-img-a">
+          <img class="header-img" src="images/reddit_logo.jpg" alt="reddit.com">
         </a>
-        <ul class="top-nav">
-          <li><a href="#">hot</a></li>
-          <li><a href="#">new</a></li>
-          <li><a href="#">controversial</a></li>
-          <li><a href="#">top</a></li>
-          <li><a href="#">gilded</a></li>
-          <li><a href="#">wiki</a></li>
-        </ul>
-      </div>
-
-      <!-- Right Section: Search + User Info -->
-      <div class="topbar-right">
-        <form class="search-form" action="#" method="get">
-          <input type="text" class="search-input" placeholder="search" aria-label="Search" />
-          <button class="search-button" aria-label="Search">Go</button>
-        </form>
-        <div class="user-links">
-          <a href="#">login</a>
-          <span class="separator">|</span>
-          <a href="#">sign up</a>
-        </div>
       </div>
     </div>
-  </div>
-
-  <!-- Secondary Navigation (Subreddits row) -->
-  <div class="subreddits-bar">
-    <ul class="subreddits-list">
-      <li><a href="#">AskReddit</a></li>
-      <li><a href="#">Pics</a></li>
-      <li><a href="#">Technology</a></li>
-      <li><a href="#">Funny</a></li>
-      <li><a href="#">WorldNews</a></li>
-      <li><a href="#">Videos</a></li>
-      <li><a href="#">WTF</a></li>
-      <li><a href="#">Gaming</a></li>
-      <li><a href="#">aww</a></li>
-    </ul>
-  </div>
-
-  <!-- Main Container -->
-  <div class="content-container">
-
-    <!-- LEFT SIDEBAR -->
-    <aside class="sidebar-left" aria-label="Left Sidebar">
-      <ul class="subreddit-list">
-        <!-- Sidebar items as simple links -->
-        <li><a href="#">FRONT PAGE</a></li>
-        <li><a href="#">PICS</a></li>
-        <li><a href="#">SCIENCE</a></li>
-        <li><a href="#">TECHNOLOGY</a></li>
-        <li><a href="#">ASK REDDIT</a></li>
-        <li><a href="#">FUNNY</a></li>
-        <li><a href="#">WTF?</a></li>
-        <li><a href="#">IAMA</a></li>
-        <li><a href="#">WORLD NEWS</a></li>
-        <li><a href="#">TODAYILEARNED</a></li>
-        <li><a href="#">WEBDESIGN</a></li>
-        <li><a href="#">ATHEIST</a></li>
-        <li><a href="#">ATT???</a></li>
-        <li><a href="#">(MORE)</a></li>
-      </ul>
-
-      <!-- “Submit a link” Box -->
-      <div class="sidebar-box">
-        <h2 class="sidebar-title">Submit a link</h2>
-        <p>
-          Share something new, interesting: news article, blog entry, video, pictures...
-        </p>
+    <div class="header-bottom">
+      <div class="header-user-info-shadow"></div>
+      <div class="header-user-info">
+        <a href="#">7hunderedand77,</a>
+        <span>you're back! </span>
+        <a href="#">preferences</a>
+        <span class="separator">|</span>
+        <a href="#">logout?</a>
+        <span>:(</span>
       </div>
+      <nav>
+        <ul class="tabmenu">
+          <div class="search-box">
+            <input type="text" placeholder="search reddit">
+            <button type="submit" class="search-button">
+              <img src="images/search-icon.png" alt="Search">
+            </button>
+          </div>
+          <li>
+            <a href="#">1 New Msg</a>
+          </li>
+          <li>
+            <a href="#">53,211 Link</a>
+          </li>
+          <li>
+            <a href="#">4,887 Comment</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container">
+      <aside class="sidebar left">
+        <nav>
+          <ul>
+            <li>
+              <img src="images/sidebar-icon.png" alt="icon"><a class="sidenav" href="#">FRONT PAGE</a>
+            </li>
+            <li>
+              <img src="images/sidebar-icon.png" alt="icon"><a class="sidenav" href="#">PICS</a>
+            </li>
+            <li>
+              <img src="images/sidebar-icon.png" alt="icon"><a class="sidenav" href="#">SCIENCE</a>
+            </li>
+            <li>
+              <img src="images/sidebar-icon.png" alt="icon"><a class="sidenav" href="#">TECHNOLOGY</a>
+            </li>
+            <li>
+              <img src="images/sidebar-icon.png" alt="icon"><a class="sidenav" href="#">ASK REDDIT</a>
+            </li>
+            <li>
+              <img src="images/sidebar-icon.png" alt="icon"><a class="sidenav" href="#">FUNNY</a>
+            </li>
+            <li>
+              <img src="images/sidebar-icon.png" alt="icon"><a class="sidenav" href="#">WTF</a>
+            </li>
+            <li>
+              <img src="images/sidebar-icon.png" alt="icon"><a class="sidenav" href="#">IAMA</a>
+            </li>
+            <li>
+              <img src="images/sidebar-icon.png" alt="icon"><a class="sidenav" href="#">WORLD NEWS</a>
+            </li>
+            <li>
+              <img src="images/sidebar-icon.png" alt="icon"><a class="sidenav" href="#">TODAYILEARNED</a>
+            </li>
+            <li>
+              <img src="images/sidebar-icon.png" alt="icon"><a class="sidenav" href="#">WORLDNEWS</a>
+            </li>
+            <li>
+              <img src="images/sidebar-icon.png" alt="icon"><a class="sidenav" href="#">WEBDESIGN</a>
+            </li>
+            <li>
+              <img src="images/sidebar-icon.png" alt="icon"><a class="sidenav" href="#">ATHEIST</a>
+            </li>
+            <li>
+              <img src="images/sidebar-icon.png" alt="icon"><a class="sidenav" href="#">FFFFUUUUUUUU</a>
+            </li>
+            <li><a class="sidenav" href="#">(MORE)</a></li>
+          </ul>
+        </nav>
+      </aside>
 
-      <!-- “Croato Community” Box -->
-      <div class="sidebar-box">
-        <h2 class="sidebar-title">Croato Community</h2>
-        <p>
-          Work in progress. There's nothing in the rules (except hold on the side).
-        </p>
-        <img src="https://via.placeholder.com/90x90/FFFFFF/000000?text=Ad" alt="Tiny Ad Figurine" class="tiny-ad" />
-        <p>tiniest ad in the world</p>
-      </div>
-    </aside>
-
-    <!-- MAIN FEED -->
-    <main class="main-feed" aria-label="Main Content">
-        <!-- Post #1 -->
+      <main class="content">
         <article class="post">
-        <div class="rank">1</div>
-        <div class="post-votes">
-            <button class="arrow up" aria-label="Upvote"></button>
-            <div class="score">215</div>
-            <button class="arrow down" aria-label="Downvote"></button>
-        </div>
-        <div class="post-thumbnail">
-            <img src="images/football.jpg" alt="Football thumbnail" />
-        </div>
-        <div class="post-body">
-            <h3 class="post-title"><a href="#">What do you call 60 guys watching the Super Bowl at home?</a></h3>
-            <p class="tagline">
-            submitted <strong>19 hours ago</strong> by <a href="#">krispykrackers</a>
-            </p>
-            <p class="post-meta">
-            <a href="#" class="meta-link">623 comments</a> <a href="#" class="meta-link">share</a> <a href="#" class="meta-link">save</a> <a href="#" class="meta-link">hide</a> <a href="#" class="meta-link">report</a>
-            </p>
-        </div>
+          <span class="post-number">1</span>
+          <div class="vote-box">
+            <div class="arrow up"></div>
+            <span class="vote-count">432</span>
+            <div class="arrow down"></div>
+          </div>
+          <div class="thumbnail" style="background-image: url('images/cat-thumbnail.jpg');"></div>
+          <div class="post-content">
+            <a href="#">This cat's reaction to seeing snow for the first time is priceless [OC]</a>
+            <p class="post-details">submitted 5 hours ago by feline_lover</p>
+            <p class="post-stats">142 comments share save hide report</p>
+          </div>
         </article>
-    
-        <!-- Post #2 -->
         <article class="post">
-        <div class="rank">2</div>
-        <div class="post-votes">
-            <button class="arrow up" aria-label="Upvote"></button>
-            <div class="score">232</div>
-            <button class="arrow down" aria-label="Downvote"></button>
-        </div>
-        <div class="post-body">
-            <h3 class="post-title"><a href="#">I AM the guy who created this design AMA</a></h3>
-            <p class="tagline">
-            submitted <strong>19 hours ago</strong> by <a href="#">7hundredand77</a>
-            </p>
-            <p class="post-meta">
-            <a href="#" class="meta-link">200 comments</a> <a href="#" class="meta-link">share</a> <a href="#" class="meta-link">save</a> <a href="#" class="meta-link">hide</a> <a href="#" class="meta-link">report</a>
-            </p>
-        </div>
+          <span class="post-number">2</span>
+          <div class="vote-box">
+            <div class="arrow up"></div>
+            <span class="vote-count">327</span>
+            <div class="arrow down"></div>
+          </div>
+          <div class="post-content">
+            <a href="#">IAM a former NASA engineer who worked on the Mars Rover project. AMA!</a>
+            <p class="post-details">submitted 8 hours ago by space_explorer</p>
+            <p class="post-stats">264 comments share save hide report</p>
+          </div>
         </article>
-    
-        <!-- Post #3 -->
         <article class="post">
-        <div class="rank">3</div>
-        <div class="post-votes">
-            <button class="arrow up" aria-label="Upvote"></button>
-            <div class="score">22</div>
-            <button class="arrow down" aria-label="Downvote"></button>
-        </div>
-        <div class="post-body">
-            <h3 class="post-title"><a href="#">Use this Chrome addon to 'block major third parties and search engines from tracking the webpages you go to and searches...</a></h3>
-            <p class="tagline">
-            submitted <strong>19 hours ago</strong> by <a href="#">krispykrackers</a>
-            </p>
-            <p class="post-meta">
-            <a href="#" class="meta-link">200 comments</a> <a href="#" class="meta-link">share</a> <a href="#" class="meta-link">save</a> <a href="#" class="meta-link">hide</a> <a href="#" class="meta-link">report</a>
-            </p>
-        </div>
+          <span class="post-number">3</span>
+          <div class="vote-box">
+            <div class="arrow up"></div>
+            <span class="vote-count">298</span>
+            <div class="arrow down"></div>
+          </div>
+          <div class="thumbnail" style="background-image: url('images/privacy-thumbnail.jpg');"></div>
+          <div class="post-content">
+            <a href="#">This new browser extension blocks tracking cookies and prevents data harvesting while browsing</a>
+            <p class="post-details">submitted 10 hours ago by privacy_advocate</p>
+            <p class="post-stats">87 comments share save hide report</p>
+          </div>
         </article>
-    
-        <!-- Post #4 -->
         <article class="post">
-        <div class="rank">4</div>
-        <div class="post-votes">
-            <button class="arrow up" aria-label="Upvote"></button>
-            <div class="score">215</div>
-            <button class="arrow down" aria-label="Downvote"></button>
-        </div>
-        <div class="post-thumbnail">
-            <img src="images/book.jpg" alt="Book thumbnail" />
-        </div>
-        <div class="post-body">
-            <h3 class="post-title"><a href="#">Thanks, Sally, That blowjob was... SFW</a></h3>
-            <p class="tagline">
-            submitted <strong>11 hours ago</strong> by <a href="#">Maiiko</a> to <a href="#">gaming</a>
-            </p>
-            <p class="post-meta">
-            <a href="#" class="meta-link">22 comments</a> <a href="#" class="meta-link">share</a> <a href="#" class="meta-link">save</a> <a href="#" class="meta-link">hide</a> <a href="#" class="meta-link">report</a>
-            </p>
-        </div>
+          <span class="post-number">4</span>
+          <div class="vote-box">
+            <div class="arrow up"></div>
+            <span class="vote-count">256</span>
+            <div class="arrow down"></div>
+          </div>
+          <div class="post-content">
+            <a href="#">What's the most unusual talent you have that's completely useless in everyday life?</a>
+            <p class="post-details">submitted 12 hours ago by curious_mind</p>
+            <p class="post-stats">321 comments share save hide report</p>
+          </div>
         </article>
+        <article class="post">
+          <span class="post-number">5</span>
+          <div class="vote-box">
+            <div class="arrow up"></div>
+            <span class="vote-count">215</span>
+            <div class="arrow down"></div>
+          </div>
+          <div class="thumbnail" style="background-image: url('images/sunset-thumbnail.jpg');"></div>
+          <div class="post-content">
+            <a href="#">Captured this incredible sunset at the Grand Canyon yesterday [OC]</a>
+            <p class="post-details">submitted 15 hours ago by nature_photographer</p>
+            <p class="post-stats">64 comments share save hide report</p>
+          </div>
+        </article>
+        <article class="post">
+          <span class="post-number">6</span>
+          <div class="vote-box">
+            <div class="arrow up"></div>
+            <span class="vote-count">189</span>
+            <div class="arrow down"></div>
+          </div>
+          <div class="post-content">
+            <a href="#">TIL that honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.</a>
+            <p class="post-details">submitted 17 hours ago by history_buff</p>
+            <p class="post-stats">93 comments share save hide report</p>
+          </div>
+        </article>
+        <article class="post">
+          <span class="post-number">7</span>
+          <div class="vote-box">
+            <div class="arrow up"></div>
+            <span class="vote-count">165</span>
+            <div class="arrow down"></div>
+          </div>
+          <div class="thumbnail" style="background-image: url(images/book.jpg);"></div>
+          <div class="post-content">
+            <a href="#">Just released my first indie game after 2 years of development. What do you think?</a>
+            <p class="post-details">submitted 19 hours ago by indie_dev</p>
+            <p class="post-stats">112 comments share save hide report</p>
+          </div>
+        </article>
+        <article class="post">
+          <span class="post-number">8</span>
+          <div class="vote-box">
+            <div class="arrow up"></div>
+            <span class="vote-count">147</span>
+            <div class="arrow down"></div>
+          </div>
+          <div class="post-content">
+            <a href="#">Chefs of Reddit, what's your go-to meal when you're too tired to cook anything elaborate?</a>
+            <p class="post-details">submitted 20 hours ago by food_enthusiast</p>
+            <p class="post-stats">276 comments share save hide report</p>
+          </div>
+        </article>
+        <article class="post">
+          <span class="post-number">9</span>
+          <div class="vote-box">
+            <div class="arrow up"></div>
+            <span class="vote-count">128</span>
+            <div class="arrow down"></div>
+          </div>
+          <div class="thumbnail" style="background-image: url(images/football.jpg);"></div>
+          <div class="post-content">
+            <a href="#">This new gadget can charge your phone in under 5 minutes</a>
+            <p class="post-details">submitted 22 hours ago by tech_reviewer</p>
+            <p class="post-stats">54 comments share save hide report</p>
+          </div>
+        </article>
+        <article class="post">
+          <span class="post-number">10</span>
+          <div class="vote-box">
+            <div class="arrow up"></div>
+            <span class="vote-count">113</span>
+            <div class="arrow down"></div>
+          </div>
+          <div class="post-content">
+            <a href="#">What's a seemingly harmless thing that's actually incredibly dangerous?</a>
+            <p class="post-details">submitted 23 hours ago by danger_aware</p>
+            <p class="post-stats">197 comments share save hide report</p>
+          </div>
+        </article>
+        <article class="post">
+          <span class="post-number">11</span>
+          <div class="vote-box">
+            <div class="arrow up"></div>
+            <span class="vote-count">98</span>
+            <div class="arrow down"></div>
+          </div>
+          <div class="thumbnail" style="background-image: url('images/meme-thumbnail.jpg');"></div>
+          <div class="post-content">
+            <a href="#">Every programmer will understand this meme</a>
+            <p class="post-details">submitted 1 day ago by code_humorist</p>
+            <p class="post-stats">72 comments share save hide report</p>
+          </div>
+        </article>
+      </main>
 
-      <!-- Post #5 -->
-      <article class="post">
-        <div class="rank">5</div>
-        <div class="post-votes">
-          <button class="arrow up" aria-label="Upvote"></button>
-          <div class="score">232</div>
-          <button class="arrow down" aria-label="Downvote"></button>
+      <aside class="sidebar right">
+        <div class="postview">
+          <p class="post-title">IAM a former NASA engineer who worked on the Mars Rover project. AMA!</p>
+          <p>https://img.space.com/nasa-mars-rover-engineer.jpg</p>
+          <div class="post-title-box">
+            <div class="post-stat-box">
+              <h1>327</h1>
+              <h3>points (83% like it)</h3>
+              <div class="post-vote-count">
+                <p>375 up votes</p>
+                <p>48 down votes</p>
+              </div>
+            </div>
+            <div class="post-detail-box">
+              <p>submitted on 15 Mar 2025</p>
+              <p>264 comments sort by</p>
+            </div>
+          </div>
         </div>
-        <div class="post-body">
-          <h3 class="post-title"><a href="#">I AM the guy who created this design AMA</a></h3>
-          <p class="tagline">
-            submitted <strong>6 hours ago</strong> by <a href="#">u/DesignerDude</a> to <a href="#">r/IAmA</a>
-          </p>
-          <p class="post-meta">
-            <a href="#" class="comments-link">232 comments</a> | <a href="#">share</a> | <a href="#">save</a> | <a href="#">hide</a>
-          </p>
+        <div class="comments">
+          <div class="addcomment">
+            <textarea name="comment" id="comment" cols="20" rows="1" placeholder="What would you like to know?"></textarea>
+            <button>save</button>
+          </div>
+          <div class="replies">
+            <div class="reply">
+              <p class="reply-user">SpaceEnthusiast42</p>
+              <p class="reply-text">
+                What was the biggest challenge you faced while working on the Mars Rover? Were there any moments where you thought the project might fail?
+              </p>
+              <div class="reply-actions">
+                <span>Reply</span> | <span>Share</span> |
+                <span>Report</span>
+              </div>
+              <div class="replies">
+                <div class="reply">
+                  <p class="reply-user">space_explorer</p>
+                  <p class="reply-text">
+                    Great question! The biggest challenge was definitely testing for Mars' environment here on Earth. We had to simulate everything from the extreme temperature changes to the dust storms. There was a moment during vibration testing when we thought we had a critical component failure, but it turned out to be a false alarm. Those few hours were pretty tense though!
+                  </p>
+                  <div class="reply-actions">
+                    <span>Reply</span> | <span>Share</span> |
+                    <span>Report</span>
+                  </div>
+
+                  <div class="replies">
+                    <div class="reply">
+                      <p class="reply-user">CuriousScientist</p>
+                      <p class="reply-text">How did you test for the Martian dust? I've heard it's incredibly fine and gets everywhere.</p>
+                      <div class="reply-actions">
+                        <span>Reply</span> | <span>Share</span> |
+                        <span>Report</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </article>
-    </main>
-
-    <!-- RIGHT SIDEBAR -->
-    <aside class="sidebar-right" aria-label="Right Sidebar">
-      <div class="side-card">
-        <h2>I AM the guy who created this design AMA</h2>
-        <p>232 points (98% upvoted)</p>
-        <p>Here is some extra context about this post. Feel free to AMA below!</p>
-        <a href="#" class="button">Join Discussion</a>
-      </div>
-      <div class="side-card">
-        <h2>Advertisement</h2>
-        <img src="https://via.placeholder.com/200x200/FFFFFF/000000?text=Ad+Space" alt="Advertisement">
-      </div>
-    </aside>
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <ul class="footer-links">
-      <li><a href="#">help</a></li>
-      <li><a href="#">rules</a></li>
-      <li><a href="#">contact us</a></li>
-      <li><a href="#">reddit coins</a></li>
-      <li><a href="#">reddit premium</a></li>
-      <li><a href="#">about</a></li>
-      <li><a href="#">blog</a></li>
-    </ul>
-    <p class="footer-disclaimer">
-      © 2025 Reddit Inc. All rights reserved.
-    </p>
-  </footer>
-
-</body>
+      </aside>
+    </div>
+  </body>
 </html>
