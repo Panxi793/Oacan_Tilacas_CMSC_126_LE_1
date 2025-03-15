@@ -126,7 +126,7 @@
     top: 28px;
     border-radius: 3px;
     right: 45px;
-    background-color: #eaecef;
+    background-color: #f6f6f6;
     padding: 5px;
     width: 320px;
     box-shadow: 0 0 0px #000;
@@ -159,6 +159,14 @@
     box-shadow: 0 0 2px #000;
   }
   
+  .msg-icon {
+    width: 20px; 
+    height: 14px;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
   .search-box input[type="text"] {
     width: 129px;
     font-size: 22px;
@@ -185,9 +193,12 @@
   
   .sidenav {
     text-decoration: none;
-    font-weight: bold;
     color: gray;
   }
+
+  li:last-child .sidenav {
+    color: blue 
+}
   
   body {
     font-family: Arial, sans-serif;
@@ -231,7 +242,7 @@
   
   .left {
     position: absolute;
-    background-color: #dae0e6;
+    background-color: #e9eff5;
     top: 50px;
     left: 0;
     width: 200px;
@@ -267,14 +278,22 @@
   .left nav ul li a {
     text-decoration: none;
     font-weight: bold;
-    color: #336699;
+    color:  #444444;
     font-size: 13px;
   }
   
   .left nav ul li:hover {
-    background-color: #c7d8ec;
+    background-color: white;
+    border-top: 1px solid #444444;
+    border-bottom: 1px solid #444444;
     cursor: pointer;
-  }
+}
+
+.left nav ul li:last-child:hover {
+    border-top: none;
+    border-bottom: none;
+    background-color: transparent;
+}
   
   .right {
     grid-column: 3 / 4;
