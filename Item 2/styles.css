@@ -216,14 +216,26 @@ a:hover {
   margin: 2px 0;
 }
 .arrow.up {
-  background: url('https://via.placeholder.com/20/FF4500?text=%5E') no-repeat center;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><polygon points="5,0 10,10 0,10" fill="%23c6c6c6"/></svg>');
 }
+
+.arrow.up:hover, .arrow.up.active {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><polygon points="5,0 10,10 0,10" fill="%23FF4500"/></svg>');
+}
+
 .arrow.down {
-  background: url('https://via.placeholder.com/20/0079D3?text=v') no-repeat center;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><polygon points="5,10 0,0 10,0" fill="%23c6c6c6"/></svg>');
 }
+
+.arrow.down:hover, .arrow.down.active {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><polygon points="5,10 0,0 10,0" fill="%230079D3"/></svg>');
+}
+
 .score {
   font-weight: bold;
   color: #666;
+  font-size: 12px;
+  margin: 2px 0;
 }
 .post-body {
   flex: 1;
