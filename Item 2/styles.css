@@ -109,7 +109,7 @@
 
 .tabmenu li a {
     padding: 5px 10px;
-    background-color: #eff7ff;
+    background-color: white;
     text-decoration: none;
     color: #333;
     border-radius: 3px;
@@ -163,6 +163,7 @@
     width: 20px; 
     height: 14px;
     margin-right: 5px;
+    margin-left: -8px;
     display: inline-block;
     vertical-align: middle;
 }
