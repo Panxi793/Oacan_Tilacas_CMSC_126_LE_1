@@ -12,13 +12,49 @@
         <p>Crispy fried chicken coated in a sweet and spicy sauce</p>
     </header>
 
-    <main id="recipe-carousel">
-        <!-- Introduction -->
-        <section id="introduction" class="carousel-item active">
+    <!-- Introduction and Recipe Info Section -->
+    <section class="recipe-intro-container">
+        <div class="recipe-intro">
             <h2>Introduction</h2>
-            <p>Korean Yangyeom Chicken is a popular Korean dish featuring crispy twice-fried chicken tossed in a sweet, spicy, and sticky sauce. This recipe serves 4 people and takes about 1 hour to prepare.</p>
-            <div class="ingredients">
-                <h3>Ingredients</h3>
+            <p>Korean Yangyeom Chicken is a popular Korean dish featuring crispy twice-fried chicken tossed in a sweet, spicy, and sticky sauce. Perfect for sharing with friends or as a main dish with rice.</p>
+            <div class="recipe-meta">
+                <p><strong>Recipe by:</strong> Chef Kim</p>
+                <p><strong>Updated on:</strong> March 15, 2025</p>
+            </div>
+        </div>
+        
+        <div class="recipe-info-table">
+            <table>
+                <tr>
+                    <td>Prep Time:</td>
+                    <td>20 minutes</td>
+                </tr>
+                <tr>
+                    <td>Cook Time:</td>
+                    <td>30 minutes</td>
+                </tr>
+                <tr>
+                    <td>Additional Time:</td>
+                    <td>10 minutes</td>
+                </tr>
+                <tr>
+                    <td>Total Time:</td>
+                    <td>1 hour</td>
+                </tr>
+                <tr>
+                    <td>Servings:</td>
+                    <td>4 people</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section class="ingredients-section">
+        <h2>Ingredients</h2>
+        <div class="ingredients-container">
+            <div class="ingredients-column">
+                <h3>For the Chicken:</h3>
                 <ul>
                     <li>2 lbs (900g) chicken wings or boneless chicken thighs</li>
                     <li>1 cup potato starch or cornstarch</li>
@@ -27,7 +63,8 @@
                     <li>1 tsp garlic powder</li>
                     <li>Oil for deep frying</li>
                 </ul>
-                
+            </div>
+            <div class="ingredients-column">
                 <h3>For the Yangyeom Sauce:</h3>
                 <ul>
                     <li>4 tbsp gochujang (Korean red pepper paste)</li>
@@ -42,122 +79,237 @@
                     <li>2 green onions, chopped for garnish</li>
                 </ul>
             </div>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Ingredients for Korean Yangyeom Chicken laid out on a cutting board]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step1" class="next-btn">Begin Cooking</a>
-            </nav>
-        </section>
+        </div>
+    </section>
 
-        <!-- Step 1 -->
-        <section id="step1" class="carousel-item">
-            <h2>Step 1: Prepare the Chicken</h2>
-            <p>Pat the chicken pieces dry with paper towels. In a large bowl, mix the chicken with salt, pepper, and garlic powder, ensuring each piece is well-seasoned.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Seasoned chicken pieces in a bowl]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#introduction" class="prev-btn">Previous Step</a>
-                <a href="#step2" class="next-btn">Next Step</a>
-            </nav>
-        </section>
+    <!-- Carousel Section -->
+    <h2 class="steps-heading">Cooking Steps</h2>
+    <div class="carousel-container">
+        <div class="carousel-wrapper" id="recipe-carousel">
+            
+            <!-- Step 1 -->
+            <section id="step1" class="carousel-item active">
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img src="images/step1.jpg" alt="Seasoned chicken pieces in a bowl" 
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Step+1:+Prepare+Chicken';">
+                    </div>
+                    <div class="carousel-text">
+                        <h3>Step 1: Prepare the Chicken</h3>
+                        <p>Pat the chicken pieces dry with paper towels. In a large bowl, mix the chicken with salt, pepper, and garlic powder, ensuring each piece is well-seasoned.</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Step 2 -->
-        <section id="step2" class="carousel-item">
-            <h2>Step 2: Coat with Starch</h2>
-            <p>Place the potato starch in a separate bowl. Dredge each chicken piece in the starch, shaking off excess. Make sure each piece is evenly coated for maximum crispiness.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Chicken pieces being coated in starch]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step1" class="prev-btn">Previous Step</a>
-                <a href="#step3" class="next-btn">Next Step</a>
-            </nav>
-        </section>
+            <!-- Step 2 -->
+            <section id="step2" class="carousel-item">
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img src="images/step2.jpg" alt="Chicken pieces being coated in starch" 
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Step+2:+Coat+with+Starch';">
+                    </div>
+                    <div class="carousel-text">
+                        <h3>Step 2: Coat with Starch</h3>
+                        <p>Place the potato starch in a separate bowl. Dredge each chicken piece in the starch, shaking off excess. Make sure each piece is evenly coated for maximum crispiness.</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Step 3 -->
-        <section id="step3" class="carousel-item">
-            <h2>Step 3: First Fry</h2>
-            <p>Heat oil to 340°F (170°C) in a deep fryer or large pot. Fry the chicken in batches for 5-6 minutes until lightly golden. Remove and place on a wire rack to drain. This initial fry cooks the chicken through.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Chicken pieces during first fry]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step2" class="prev-btn">Previous Step</a>
-                <a href="#step4" class="next-btn">Next Step</a>
-            </nav>
-        </section>
+            <!-- Step 3 -->
+            <section id="step3" class="carousel-item">
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img src="images/step3.jpg" alt="Chicken pieces during first fry" 
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Step+3:+First+Fry';">
+                    </div>
+                    <div class="carousel-text">
+                        <h3>Step 3: First Fry</h3>
+                        <p>Heat oil to 340°F (170°C) in a deep fryer or large pot. Fry the chicken in batches for 5-6 minutes until lightly golden. Remove and place on a wire rack to drain.</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Step 4 -->
-        <section id="step4" class="carousel-item">
-            <h2>Step 4: Second Fry</h2>
-            <p>Increase oil temperature to 375°F (190°C). Return the chicken for a second fry for 2-3 minutes until deeply golden and extra crispy. Remove and drain on a clean wire rack.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Chicken pieces during second fry, looking golden and crispy]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step3" class="prev-btn">Previous Step</a>
-                <a href="#step5" class="next-btn">Next Step</a>
-            </nav>
-        </section>
+            <!-- Step 4 -->
+            <section id="step4" class="carousel-item">
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img src="images/step4.jpg" alt="Chicken pieces during second fry, looking golden and crispy" 
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Step+4:+Second+Fry';">
+                    </div>
+                    <div class="carousel-text">
+                        <h3>Step 4: Second Fry</h3>
+                        <p>Increase oil temperature to 375°F (190°C). Return the chicken for a second fry for 2-3 minutes until deeply golden and extra crispy. Remove and drain on a clean wire rack.</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Step 5 -->
-        <section id="step5" class="carousel-item">
-            <h2>Step 5: Prepare the Sauce</h2>
-            <p>In a saucepan over medium heat, combine gochujang, soy sauce, honey, brown sugar, rice vinegar, minced garlic, and ginger. Stir until the sauce begins to bubble and thicken, about 3-4 minutes. Remove from heat and stir in sesame oil.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Yangyeom sauce bubbling in a pan]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step4" class="prev-btn">Previous Step</a>
-                <a href="#step6" class="next-btn">Next Step</a>
-            </nav>
-        </section>
+            <!-- Step 5 -->
+            <section id="step5" class="carousel-item">
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img src="images/step5.jpg" alt="Yangyeom sauce bubbling in a pan" 
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Step+5:+Prepare+Sauce';">
+                    </div>
+                    <div class="carousel-text">
+                        <h3>Step 5: Prepare the Sauce</h3>
+                        <p>In a saucepan over medium heat, combine gochujang, soy sauce, honey, brown sugar, rice vinegar, minced garlic, and ginger. Stir until the sauce begins to bubble and thicken.</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Step 6 -->
-        <section id="step6" class="carousel-item">
-            <h2>Step 6: Coat the Chicken</h2>
-            <p>Place the fried chicken in a large bowl. Pour the hot sauce over the chicken and toss until all pieces are evenly coated. Work quickly while both chicken and sauce are still hot.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Tossing fried chicken in Yangyeom sauce]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step5" class="prev-btn">Previous Step</a>
-                <a href="#step7" class="next-btn">Next Step</a>
-            </nav>
-        </section>
+            <!-- Step 6 -->
+            <section id="step6" class="carousel-item">
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img src="images/step6.jpg" alt="Tossing fried chicken in Yangyeom sauce" 
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Step+6:+Coat+Chicken';">
+                    </div>
+                    <div class="carousel-text">
+                        <h3>Step 6: Coat the Chicken</h3>
+                        <p>Place the fried chicken in a large bowl. Pour the hot sauce over the chicken and toss until all pieces are evenly coated. Work quickly while both chicken and sauce are still hot.</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Step 7 -->
-        <section id="step7" class="carousel-item">
-            <h2>Step 7: Garnish and Serve</h2>
-            <p>Transfer the coated chicken to a serving plate. Sprinkle with toasted sesame seeds and chopped green onions. Serve immediately while hot and crispy.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Finished Korean Yangyeom Chicken garnished with sesame seeds and green onions]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step6" class="prev-btn">Previous Step</a>
-                <a href="#complete" class="next-btn">Finish</a>
-            </nav>
-        </section>
+            <!-- Step 7 -->
+            <section id="step7" class="carousel-item">
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img src="images/step7.jpg" alt="Finished Korean Yangyeom Chicken garnished with sesame seeds and green onions" 
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Step+7:+Garnish';">
+                    </div>
+                    <div class="carousel-text">
+                        <h3>Step 7: Garnish and Serve</h3>
+                        <p>Transfer the coated chicken to a serving plate. Sprinkle with toasted sesame seeds and chopped green onions. Serve immediately while hot and crispy.</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Complete -->
-        <section id="complete" class="carousel-item">
-            <h2>Complete!</h2>
-            <p>Congratulations! Your Korean Yangyeom Chicken is ready to enjoy. It's best served hot with pickled radish or kimchi on the side. For an authentic Korean meal, pair with steamed rice and cold beer.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Full meal spread of Korean Yangyeom Chicken with sides]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step7" class="prev-btn">Previous Step</a>
-                <a href="#introduction" class="restart-btn">Start Over</a>
-            </nav>
-        </section>
-    </main>
+            <!-- Finished Step -->
+            <section id="finished" class="carousel-item">
+                <div class="carousel-content">
+                    <div class="carousel-text">
+                        <h3>Cooking Complete!</h3>
+                        <p>Congratulations! You've successfully prepared Korean Yangyeom Chicken. Enjoy your delicious crispy chicken with its sweet and spicy sauce. This dish pairs well with rice or as part of a Korean feast.</p>
+                        <a href="#step1" class="start-over-btn">START OVER</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation Buttons -->
+            <button class="arrow left-arrow" id="prev-btn" aria-label="Previous step">&#10094;</button>
+            <button class="arrow right-arrow" id="next-btn" aria-label="Next step">&#10095;</button>
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+            <a href="#step1" class="indicator" aria-label="Go to step 1"></a>
+            <a href="#step2" class="indicator" aria-label="Go to step 2"></a>
+            <a href="#step3" class="indicator" aria-label="Go to step 3"></a>
+            <a href="#step4" class="indicator" aria-label="Go to step 4"></a>
+            <a href="#step5" class="indicator" aria-label="Go to step 5"></a>
+            <a href="#step6" class="indicator" aria-label="Go to step 6"></a>
+            <a href="#step7" class="indicator" aria-label="Go to step 7"></a>
+            <a href="#finished" class="indicator" aria-label="Go to finished"></a>
+        </div>
+    </div>
 
     <footer>
         <p>Accessible Cooking Guide | Navigate with keyboard using Tab and Enter</p>
         <p>Use arrow keys or Tab to move between steps</p>
     </footer>
+
+    <!-- JavaScript for Carousel Navigation -->
+    <script>
+        const items = document.querySelectorAll('.carousel-item');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentIndex = 0;
+
+        function showItem(index) {
+            // Make sure index is within bounds
+            if (index < 0 || index >= items.length) return;
+            
+            items.forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+            });
+
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+            });
+            
+            // Set the hash to the current step ID or 'finished' for the last item
+            const stepId = index < items.length - 1 ? `step${index + 1}` : 'finished';
+            window.location.hash = `#${stepId}`;
+            currentIndex = index;
+        }
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            // Only advance if not on the last item (finished)
+            if (currentIndex < items.length - 1) {
+                currentIndex += 1;
+                showItem(currentIndex);
+            }
+        });
+
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            // Only go back if not on the first item
+            if (currentIndex > 0) {
+                currentIndex -= 1;
+                showItem(currentIndex);
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') {
+                // Only advance if not on the last item
+                if (currentIndex < items.length - 1) {
+                    currentIndex += 1;
+                    showItem(currentIndex);
+                }
+            } else if (e.key === 'ArrowLeft') {
+                // Only go back if not on the first item
+                if (currentIndex > 0) {
+                    currentIndex -= 1;
+                    showItem(currentIndex);
+                }
+            }
+        });
+
+        // Handle indicator clicks
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', (e) => {
+                e.preventDefault();
+                showItem(index);
+            });
+        });
+
+        // Handle Start Over button click
+        document.querySelector('.start-over-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            showItem(0); // Go to the first step (index 0)
+        });
+
+        // Set the initial step based on URL hash or default to first step
+        window.onload = () => {
+            // Check if there's a hash in the URL
+            if (window.location.hash) {
+                const hash = window.location.hash.substring(1); // Remove the #
+                if (hash === 'finished') {
+                    // Special case for the finished step
+                    currentIndex = items.length - 1;
+                } else {
+                    // Extract the step number
+                    const stepMatch = hash.match(/step(\d+)/);
+                    if (stepMatch) {
+                        const stepNum = parseInt(stepMatch[1]);
+                        currentIndex = stepNum - 1;
+                    }
+                }
+            }
+            // Make sure index is valid
+            currentIndex = Math.max(0, Math.min(currentIndex, items.length - 1));
+            showItem(currentIndex);
+        };
+    </script>
 </body>
 </html>

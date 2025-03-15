@@ -1,265 +1,406 @@
-/* Base Styles */
-:root {
-    --primary-color: #e63946;
-    --secondary-color: #f8f9fa;
-    --accent-color: #ff8c00;
-    --text-color: #333;
-    --light-text: #fff;
-    --border-color: #ddd;
-    --focus-outline: 3px solid #2980b9;
-}
-
+/* Global Styles & Reset */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #e63946; /* Red */
+    --secondary-color: #457b9d; /* Blue */
+    --background-color: #f8f9fa; /* Light Gray */
+    --text-color: #333; /* Dark Gray */
+    --light-accent: #f1faee; /* Off-White */
+    --dark-accent: #1d3557; /* Dark Blue */
+    --focus-outline: 3px solid #457b9d;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--secondary-color);
+    background-color: var(--background-color);
     padding: 20px;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background-color: var(--primary-color);
-    color: var(--light-text);
-    border-radius: 8px;
-}
-
-h1, h2, h3 {
-    margin-bottom: 1rem;
-}
-
-p {
-    margin-bottom: 1.2rem;
-    font-size: 1.1rem;
-}
-
-ul {
-    margin-left: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-li {
-    margin-bottom: 0.5rem;
-}
-
-/* Carousel Container and Items */
-#recipe-carousel {
-    position: relative;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.carousel-item {
-    display: none;
-    padding: 2rem;
-    min-height: 400px;
-    position: relative;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-/* Make the introduction item visible by default */
-.carousel-item.active {
-    display: block;
-    opacity: 1;
-}
-
-/* Show the targeted carousel item */
-.carousel-item:target {
-    display: block;
-    opacity: 1;
-    animation: slideIn 0.5s ease forwards;
-}
-
-/* When targeting an item, hide the active class (to ensure only one item shows) */
-.carousel-item:target ~ .carousel-item.active {
-    display: none;
-}
-
-/* Carousel Navigation Buttons */
-.carousel-navigation {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-}
-
-.prev-btn, .next-btn, .restart-btn {
-    background-color: var(--primary-color);
-    color: var(--light-text);
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    min-width: 120px;
-    text-align: center;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.restart-btn {
-    background-color: var(--accent-color);
-}
-
-/* Button hover and focus styles */
-.prev-btn:hover, .next-btn:hover, .restart-btn:hover,
-.prev-btn:focus, .next-btn:focus, .restart-btn:focus {
-    background-color: #c1121f;
-    transform: translateY(-2px);
-}
-
-.restart-btn:hover, .restart-btn:focus {
-    background-color: #e67e00;
-}
-
-/* Focus states for accessibility */
-a:focus {
+/* Accessibility-focused styles */
+:focus {
     outline: var(--focus-outline);
     outline-offset: 2px;
 }
 
-/* Ingredients section */
-.ingredients {
-    background-color: #f5f5f5;
-    padding: 1.5rem;
-    border-radius: 6px;
-    margin-bottom: 1.5rem;
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 30px 0;
+    background-color: var(--light-accent);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-bottom: 4px solid var(--primary-color);
 }
 
-/* Image placeholder */
-.image-placeholder {
-    background-color: #eee;
-    border: 1px solid var(--border-color);
-    padding: 2rem;
-    text-align: center;
-    margin: 1.5rem 0;
-    border-radius: 6px;
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--dark-accent);
+}
+
+/* Introduction and Recipe Info Section */
+.recipe-intro-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-intro {
+    flex: 1 1 400px;
+}
+
+.recipe-info-table {
+    flex: 1 1 300px;
+}
+
+.recipe-meta {
+    margin-top: 20px;
+    font-style: italic;
     color: #666;
+}
+
+.recipe-info-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recipe-info-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.recipe-info-table td:first-child {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* Ingredients Section */
+.ingredients-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ingredients-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.ingredients-column {
+    flex: 1 1 300px;
+}
+
+.ingredients-column h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--light-accent);
+    padding-bottom: 8px;
+}
+
+.ingredients-column ul {
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+.ingredients-column li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 5px;
+}
+
+/* Steps Section */
+.steps-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--dark-accent);
+    font-size: 2rem;
+}
+
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-wrapper {
+    position: relative;
+    min-height: 450px;
+}
+
+/* Hide all carousel items by default */
+.carousel-item {
+    display: none;
+    padding: 20px;
+}
+
+/* Show only the targeted item or the first one if none is targeted */
+.carousel-item:target {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* When no item is targeted, show the first one (step1) */
+.carousel-wrapper:not(:has(.carousel-item:target)) #step1 {
+    display: block;
+}
+
+/* Special case for the "finished" step */
+#finished {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#finished h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#finished p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.start-over-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.start-over-btn:hover, 
+.start-over-btn:focus {
+    background-color: var(--dark-accent);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.carousel-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+}
+
+.carousel-image {
+    flex: 1 1 400px;
+    text-align: center;
+}
+
+.carousel-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-text {
+    flex: 1 1 400px;
+    padding: 20px;
+}
+
+.carousel-text h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.carousel-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Navigation Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--secondary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.8rem;
+    z-index: 10;
+    transition: background 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.left-arrow {
+    left: 15px;
+}
+
+.right-arrow {
+    right: 15px;
+}
+
+.arrow:hover,
+.arrow:focus {
+    background: var(--dark-accent);
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 0;
+    background: #f1f1f1;
+}
+
+.indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ccc;
+    transition: background 0.3s;
+}
+
+.indicator.active {
+    background-color: #ff6347;
+}
+
+.indicator:hover,
+.indicator:focus {
+    background: var(--secondary-color);
+}
+
+/* Active indicator for when a step is targeted */
+.carousel-item:target ~ .carousel-indicators .indicator[href^="#step"]:not([href$="target"]) {
+    background: #ccc;
+}
+
+.carousel-item:target ~ .carousel-indicators .indicator[href$="target"] {
+    background: var(--primary-color);
+}
+
+/* Default active state for step1 when nothing is targeted */
+.carousel-wrapper:not(:has(.carousel-item:target)) ~ .carousel-indicators .indicator[href="#step1"] {
+    background: var(--primary-color);
 }
 
 /* Footer */
 footer {
-    margin-top: 2rem;
     text-align: center;
-    padding: 1rem;
-    color: #666;
-    font-size: 0.9rem;
+    padding: 20px;
+    background-color: var(--light-accent);
+    border-radius: 8px;
+    margin-top: 40px;
+    color: var(--dark-accent);
 }
 
-/* Animations */
-@keyframes slideIn {
-    from { 
-        opacity: 0;
-        transform: translateX(30px);
+footer p {
+    margin-bottom: 10px;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .carousel-content {
+        flex-direction: column;
     }
-    to {
-        opacity: 1;
-        transform: translateX(0);
+    
+    .carousel-wrapper {
+        min-height: 600px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
     }
 }
 
-/* Skip link for keyboard users */
-.skip-link {
-    position: absolute;
-    top: -50px;
-    left: 0;
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 8px;
-    z-index: 100;
-}
-
-.skip-link:focus {
-    top: 0;
-}
-
-/* Progress indicator */
-.progress-indicator {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    gap: 8px;
-}
-
-.progress-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #ccc;
-}
-
-.progress-dot.active {
-    background-color: var(--primary-color);
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
+@media screen and (max-width: 480px) {
     body {
         padding: 10px;
     }
     
-    .carousel-item {
-        padding: 1.5rem;
+    .recipe-intro-container,
+    .ingredients-section,
+    .carousel-container {
+        padding: 15px;
+        margin-bottom: 25px;
     }
     
-    .carousel-navigation {
-        flex-direction: column;
-        gap: 1rem;
+    header {
+        padding: 20px 0;
     }
     
-    .prev-btn, .next-btn, .restart-btn {
-        width: 100%;
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .carousel-text h3 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-text p {
+        font-size: 1rem;
     }
 }
 
 /* High contrast mode support */
-@media (prefers-contrast: high) {
+@media (prefers-contrast: more) {
     :root {
-        --primary-color: #000;
+        --primary-color: #c00;
+        --secondary-color: #006;
         --text-color: #000;
-        --light-text: #fff;
-        --border-color: #000;
-        --secondary-color: #fff;
-        --focus-outline: 3px solid #000;
+        --background-color: #fff;
+        --light-accent: #f8f8f8;
+        --dark-accent: #000;
     }
     
-    .ingredients {
-        border: 2px solid #000;
-    }
-    
-    .image-placeholder {
-        border: 2px solid #000;
-    }
-    
-    .prev-btn, .next-btn, .restart-btn {
-        border: 2px solid #000;
+    .start-over-btn {
+        outline: 2px solid black;
     }
 }
 
-/* Make sure we're showing and hiding content accessibly */
-.carousel-item:not(:target):not(.active) {
-    position: absolute;
-    left: -9999px;
-}
-
-/* Additional ARIA support */
-[aria-hidden="true"] {
-    display: none;
-}
-
-/* Ensure keyboard users can see where they are */
-:focus-visible {
-    outline: var(--focus-outline);
-    outline-offset: 3px;
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-item:target {
+        animation: none;
+    }
 }
