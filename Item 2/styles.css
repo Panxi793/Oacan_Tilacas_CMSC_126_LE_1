@@ -348,6 +348,10 @@
     margin-bottom: 8px;
   }
   
+  .blue-title {
+    color: #0000ff;
+  }
+  
   .post-title-box {
     display: flex;
     justify-content: space-between;
