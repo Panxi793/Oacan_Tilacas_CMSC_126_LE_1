@@ -23,6 +23,11 @@
             </div>
         </div>
         
+        <div class="recipe-intro-image">
+            <img src="images/yangyeom-chicken.jpg" alt="Korean Yangyeom Chicken with crispy skin coated in red sauce" 
+                 onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Korean+Yangyeom+Chicken';">
+        </div>
+        
         <div class="recipe-info-table">
             <table>
                 <tr>
@@ -191,7 +196,7 @@
                     <div class="carousel-text">
                         <h3>Cooking Complete!</h3>
                         <p>Congratulations! You've successfully prepared Korean Yangyeom Chicken. Enjoy your delicious crispy chicken with its sweet and spicy sauce. This dish pairs well with rice or as part of a Korean feast.</p>
-                        <a href="#step1" class="start-over-btn">START OVER</a>
+                        <button class="start-over-btn">START OVER</button>
                     </div>
                 </div>
             </section>
@@ -221,95 +226,138 @@
 
     <!-- JavaScript for Carousel Navigation -->
     <script>
-        const items = document.querySelectorAll('.carousel-item');
-        const indicators = document.querySelectorAll('.indicator');
-        let currentIndex = 0;
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.carousel-item');
+            const indicators = document.querySelectorAll('.indicator');
+            let currentIndex = 0;
 
-        function showItem(index) {
-            // Make sure index is within bounds
-            if (index < 0 || index >= items.length) return;
-            
-            items.forEach((item, i) => {
-                item.classList.toggle('active', i === index);
-            });
-
-            indicators.forEach((indicator, i) => {
-                indicator.classList.toggle('active', i === index);
-            });
-            
-            // Set the hash to the current step ID or 'finished' for the last item
-            const stepId = index < items.length - 1 ? `step${index + 1}` : 'finished';
-            window.location.hash = `#${stepId}`;
-            currentIndex = index;
-        }
-
-        document.getElementById('next-btn').addEventListener('click', () => {
-            // Only advance if not on the last item (finished)
-            if (currentIndex < items.length - 1) {
-                currentIndex += 1;
-                showItem(currentIndex);
+            function showItem(index, direction) {
+                // Make sure index is within bounds
+                if (index < 0 || index >= items.length) return;
+                
+                // Determine slide direction
+                // If not specified, determine based on index
+                if (!direction) {
+                    direction = index > currentIndex ? 'right' : 'left';
+                }
+                
+                const oldIndex = currentIndex;
+                currentIndex = index;
+                
+                // First remove all transitional classes from all items
+                items.forEach(item => {
+                    item.classList.remove('active', 'slide-left', 'slide-right');
+                });
+                
+                // Position new slide before transition
+                if (direction === 'right') {
+                    // New slide comes from right
+                    items[index].classList.add('slide-right');
+                } else {
+                    // New slide comes from left
+                    items[index].classList.add('slide-left');
+                }
+                
+                // Force reflow to ensure the positioning takes effect
+                void items[index].offsetWidth;
+                
+                // Position old slide for exit
+                if (direction === 'right') {
+                    // Current slide exits to left
+                    items[oldIndex].classList.add('slide-left');
+                } else {
+                    // Current slide exits to right
+                    items[oldIndex].classList.add('slide-right');
+                }
+                
+                // Activate new slide (it will transition from its starting position)
+                items[index].classList.add('active');
+                items[index].classList.remove('slide-left', 'slide-right');
+                
+                // Update indicators
+                indicators.forEach((indicator, i) => {
+                    indicator.classList.toggle('active', i === index);
+                });
+                
+                // Set the hash to the current step ID or 'finished' for the last item
+                const stepId = index < items.length - 1 ? `step${index + 1}` : 'finished';
+                history.replaceState(null, null, `#${stepId}`);
             }
-        });
 
-        document.getElementById('prev-btn').addEventListener('click', () => {
-            // Only go back if not on the first item
-            if (currentIndex > 0) {
-                currentIndex -= 1;
-                showItem(currentIndex);
-            }
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowRight') {
+            document.getElementById('next-btn').addEventListener('click', () => {
                 // Only advance if not on the last item
                 if (currentIndex < items.length - 1) {
-                    currentIndex += 1;
-                    showItem(currentIndex);
+                    showItem(currentIndex + 1, 'right'); // Slide in from right
                 }
-            } else if (e.key === 'ArrowLeft') {
+            });
+
+            document.getElementById('prev-btn').addEventListener('click', () => {
                 // Only go back if not on the first item
                 if (currentIndex > 0) {
-                    currentIndex -= 1;
-                    showItem(currentIndex);
+                    showItem(currentIndex - 1, 'left'); // Slide in from left
                 }
-            }
-        });
-
-        // Handle indicator clicks
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', (e) => {
-                e.preventDefault();
-                showItem(index);
             });
-        });
 
-        // Handle Start Over button click
-        document.querySelector('.start-over-btn').addEventListener('click', (e) => {
-            e.preventDefault();
-            showItem(0); // Go to the first step (index 0)
-        });
-
-        // Set the initial step based on URL hash or default to first step
-        window.onload = () => {
-            // Check if there's a hash in the URL
-            if (window.location.hash) {
-                const hash = window.location.hash.substring(1); // Remove the #
-                if (hash === 'finished') {
-                    // Special case for the finished step
-                    currentIndex = items.length - 1;
-                } else {
-                    // Extract the step number
-                    const stepMatch = hash.match(/step(\d+)/);
-                    if (stepMatch) {
-                        const stepNum = parseInt(stepMatch[1]);
-                        currentIndex = stepNum - 1;
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') {
+                    // Only advance if not on the last item
+                    if (currentIndex < items.length - 1) {
+                        showItem(currentIndex + 1, 'right');
+                    }
+                } else if (e.key === 'ArrowLeft') {
+                    // Only go back if not on the first item
+                    if (currentIndex > 0) {
+                        showItem(currentIndex - 1, 'left');
                     }
                 }
-            }
-            // Make sure index is valid
-            currentIndex = Math.max(0, Math.min(currentIndex, items.length - 1));
-            showItem(currentIndex);
-        };
+            });
+
+            // Handle indicator clicks
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Determine direction based on index
+                    const direction = index > currentIndex ? 'right' : 'left';
+                    showItem(index, direction);
+                });
+            });
+
+            // Handle Start Over button click
+            document.querySelector('.start-over-btn').addEventListener('click', (e) => {
+                e.preventDefault();
+                showItem(0, 'left'); // Go to the first step, sliding in from left
+            });
+
+            // Set the initial step based on URL hash or default to first step
+            window.addEventListener('load', () => {
+                // Check if there's a hash in the URL
+                if (window.location.hash) {
+                    const hash = window.location.hash.substring(1); // Remove the #
+                    if (hash === 'finished') {
+                        // Special case for the finished step
+                        currentIndex = items.length - 1;
+                    } else {
+                        // Extract the step number
+                        const stepMatch = hash.match(/step(\d+)/);
+                        if (stepMatch) {
+                            const stepNum = parseInt(stepMatch[1]);
+                            currentIndex = stepNum - 1;
+                        }
+                    }
+                }
+                // Make sure index is valid
+                currentIndex = Math.max(0, Math.min(currentIndex, items.length - 1));
+                
+                // Apply active class to first slide without animation
+                items.forEach((item, i) => {
+                    if (i === currentIndex) {
+                        item.classList.add('active');
+                    }
+                });
+                
+                indicators[currentIndex].classList.add('active');
+            });
+        });
     </script>
 </body>
 </html>

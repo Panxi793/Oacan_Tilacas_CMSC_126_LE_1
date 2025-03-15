@@ -6,13 +6,16 @@
 }
 
 :root {
-    --primary-color: #e63946; /* Red */
-    --secondary-color: #457b9d; /* Blue */
-    --background-color: #f8f9fa; /* Light Gray */
-    --text-color: #333; /* Dark Gray */
-    --light-accent: #f1faee; /* Off-White */
-    --dark-accent: #1d3557; /* Dark Blue */
-    --focus-outline: 3px solid #457b9d;
+    /* Korean Yangyeom Chicken-inspired color scheme */
+    --primary-color: #e7502d; /* Spicy red-orange color of Yangyeom sauce */
+    --secondary-color: #8c3a1c; /* Darker spicy brown-red */
+    --background-color: #fdf6e9; /* Warm cream background like fried chicken */
+    --text-color: #3a3229; /* Deep warm brown */
+    --light-accent: #fff1db; /* Light golden like fried chicken exterior */
+    --dark-accent: #7d391e; /* Deep red-brown like caramelized sauce */
+    --accent-yellow: #f9c74f; /* Golden color like crispy chicken */
+    --accent-green: #4c9173; /* Green onion garnish color */
+    --focus-outline: 3px solid var(--secondary-color);
 }
 
 body {
@@ -68,6 +71,19 @@ header p {
     flex: 1 1 400px;
 }
 
+.recipe-intro-image {
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+.recipe-intro-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--light-accent);
+}
+
 .recipe-info-table {
     flex: 1 1 300px;
 }
@@ -100,6 +116,7 @@ header p {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--accent-yellow);
 }
 
 .ingredients-container {
@@ -147,45 +164,92 @@ header p {
     overflow: hidden;
     background: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--primary-color);
 }
 
 .carousel-wrapper {
     position: relative;
-    min-height: 450px;
+    min-height: 450px; /* Consistent height for all slides */
+    overflow: hidden; /* Hide overflowing content */
 }
 
-/* Hide all carousel items by default */
+/* Base positioning for all carousel items */
 .carousel-item {
-    display: none;
-    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px; /* Uniform padding for all slides */
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.3s ease;
 }
 
-/* Show only the targeted item or the first one if none is targeted */
-.carousel-item:target {
-    display: block;
-    animation: fadeIn 0.5s ease-in-out;
+/* Active item is centered */
+.carousel-item.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 5;
 }
 
-/* When no item is targeted, show the first one (step1) */
-.carousel-wrapper:not(:has(.carousel-item:target)) #step1 {
-    display: block;
+/* Direction-specific classes */
+.carousel-item.slide-left {
+    transform: translateX(-100%); /* Position to left */
+}
+
+.carousel-item.slide-right {
+    transform: translateX(100%); /* Position to right */
+}
+
+/* Consistent content layout */
+.carousel-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+
+/* Image container with fixed dimensions */
+.carousel-image {
+    flex: 1 1 350px;
+    text-align: center;
+    padding: 10px;
+    height: 320px; /* Fixed height container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-image img {
+    width: 100%;
+    height: 300px; /* Exact height for all images */
+    object-fit: cover; /* Maintain aspect ratio while filling the container */
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--light-accent);
+}
+
+/* Consistent text sizing */
+.carousel-text {
+    flex: 1 1 350px;
+    padding: 20px; /* Uniform padding */
 }
 
 /* Special case for the "finished" step */
 #finished {
     text-align: center;
-    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#finished h3 {
-    color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 20px;
+#finished .carousel-content {
+    justify-content: center;
 }
 
-#finished p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+#finished .carousel-text {
+    max-width: 700px;
 }
 
 .start-over-btn {
@@ -196,12 +260,15 @@ header p {
     border-radius: 4px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
 }
 
 .start-over-btn:hover, 
 .start-over-btn:focus {
     background-color: var(--dark-accent);
+    transform: scale(1.05);
 }
 
 @keyframes fadeIn {
@@ -212,37 +279,24 @@ header p {
 .carousel-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
     align-items: center;
 }
 
-.carousel-image {
-    flex: 1 1 400px;
-    text-align: center;
-}
-
-.carousel-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
 .carousel-text {
-    flex: 1 1 400px;
-    padding: 20px;
+    flex: 1 1 350px;
+    padding: 10px;
 }
 
 .carousel-text h3 {
     color: var(--secondary-color);
-    margin-bottom: 15px;
-    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
 }
 
 .carousel-text p {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 /* Navigation Arrows */
@@ -250,7 +304,7 @@ header p {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: var(--secondary-color);
+    background: var(--primary-color);
     color: white;
     width: 50px;
     height: 50px;
@@ -261,8 +315,10 @@ header p {
     text-decoration: none;
     font-size: 1.8rem;
     z-index: 10;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
 }
 
 .left-arrow {
@@ -276,6 +332,7 @@ header p {
 .arrow:hover,
 .arrow:focus {
     background: var(--dark-accent);
+    transform: translateY(-50%) scale(1.1);
 }
 
 /* Carousel Indicators */
@@ -284,7 +341,6 @@ header p {
     justify-content: center;
     gap: 12px;
     padding: 15px 0;
-    background: #f1f1f1;
 }
 
 .indicator {
@@ -292,30 +348,18 @@ header p {
     height: 15px;
     border-radius: 50%;
     background: #ccc;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
+    display: block;
 }
 
 .indicator.active {
-    background-color: #ff6347;
+    background-color: var(--primary-color);
+    transform: scale(1.2);
 }
 
 .indicator:hover,
 .indicator:focus {
     background: var(--secondary-color);
-}
-
-/* Active indicator for when a step is targeted */
-.carousel-item:target ~ .carousel-indicators .indicator[href^="#step"]:not([href$="target"]) {
-    background: #ccc;
-}
-
-.carousel-item:target ~ .carousel-indicators .indicator[href$="target"] {
-    background: var(--primary-color);
-}
-
-/* Default active state for step1 when nothing is targeted */
-.carousel-wrapper:not(:has(.carousel-item:target)) ~ .carousel-indicators .indicator[href="#step1"] {
-    background: var(--primary-color);
 }
 
 /* Footer */
@@ -326,81 +370,58 @@ footer {
     border-radius: 8px;
     margin-top: 40px;
     color: var(--dark-accent);
+    border-top: 3px solid var(--accent-yellow);
 }
 
 footer p {
     margin-bottom: 10px;
 }
 
-/* Responsive Adjustments */
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-item {
+        transition: opacity 0.3s ease;
+        transform: none;
+    }
+    
+    .carousel-item.active {
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .carousel-content {
         flex-direction: column;
     }
     
     .carousel-wrapper {
-        min-height: 600px;
+        min-height: 650px;
     }
     
-    header h1 {
-        font-size: 2rem;
+    .carousel-image {
+        height: 270px;
     }
     
-    .arrow {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
+    .carousel-image img {
+        height: 250px;
     }
 }
 
 @media screen and (max-width: 480px) {
-    body {
-        padding: 10px;
+    .carousel-wrapper {
+        min-height: 550px;
     }
     
-    .recipe-intro-container,
-    .ingredients-section,
-    .carousel-container {
+    .carousel-item {
         padding: 15px;
-        margin-bottom: 25px;
     }
     
-    header {
-        padding: 20px 0;
+    .carousel-image {
+        height: 220px;
     }
     
-    header h1 {
-        font-size: 1.8rem;
-    }
-    
-    .carousel-text h3 {
-        font-size: 1.5rem;
-    }
-    
-    .carousel-text p {
-        font-size: 1rem;
-    }
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: more) {
-    :root {
-        --primary-color: #c00;
-        --secondary-color: #006;
-        --text-color: #000;
-        --background-color: #fff;
-        --light-accent: #f8f8f8;
-        --dark-accent: #000;
-    }
-    
-    .start-over-btn {
-        outline: 2px solid black;
-    }
-}
-
-/* Reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-    .carousel-item:target {
-        animation: none;
+    .carousel-image img {
+        height: 200px;
     }
 }
