@@ -232,12 +232,6 @@ header p {
     z-index: 5;
 }
 
-/* Focus styling for better keyboard navigation */
-.carousel-wrapper:focus-within {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 4px;
-}
-
 /* Make sure tab focus is visible */
 .carousel-item:focus-within {
     outline: none;
@@ -393,8 +387,8 @@ header p {
     justify-content: center;
     gap: 12px;
     padding: 15px 0;
-    border: none; /* Ensure no border */
-    background: transparent; /* Ensure no background */
+    border: none; 
+    background: transparent;
 }
 
 .indicator {
@@ -442,56 +436,124 @@ footer p {
 }
 
 
-/* Reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-    .carousel-item {
-        transition: opacity 0.3s ease;
-        transform: none;
-    }
-    
-    .carousel-item.active,
-    .carousel-item:target {
-        opacity: 1;
-    }
-    
-    .indicator::after {
-        transition: opacity 0.3s;
-    }
-}
-
-/* Responsive adjustments */
+/* Existing Responsive styles - enhanced */
 @media screen and (max-width: 768px) {
     .carousel-content {
         flex-direction: column;
     }
     
     .carousel-wrapper {
-        min-height: 650px;
+        min-height: 700px; /* Increased to accommodate stacked content */
     }
     
     .carousel-image {
-        height: 270px;
+        height: 250px;
+        margin-left: 0; /* Remove left margin on smaller screens */
+        width: 100%;
     }
     
     .carousel-image img {
-        height: 250px;
+        height: 220px;
+        max-width: 100%;
+    }
+    
+    .carousel-text {
+        margin-right: 0; /* Remove right margin on smaller screens */
+        padding: 10px 5px;
+    }
+    
+    /* Adjust arrow positions */
+    .arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.4rem;
     }
 }
 
+/* Additional breakpoint for very small screens */
 @media screen and (max-width: 480px) {
     .carousel-wrapper {
-        min-height: 550px;
+        min-height: 580px;
     }
     
     .carousel-item {
-        padding: 15px;
+        padding: 10px;
     }
     
     .carousel-image {
-        height: 220px;
+        height: 180px;
+        padding: 5px;
     }
     
     .carousel-image img {
-        height: 200px;
+        height: 160px;
+    }
+    
+    .carousel-text h3 {
+        font-size: 1.3rem;
+    }
+    
+    .carousel-text p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    /* Make indicators smaller on mobile */
+    .indicator {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .carousel-indicators {
+        gap: 8px;
+    }
+    
+    /* Smaller arrows that don't overlap content */
+    .arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    
+    .left-arrow {
+        left: 5px;
+    }
+    
+    .right-arrow {
+        right: 5px;
+    }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 360px) {
+    .carousel-wrapper {
+        min-height: 520px;
+    }
+    
+    .steps-heading {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-text h3 {
+        font-size: 1.1rem;
+    }
+    
+    .carousel-text p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Fix for viewport height issues on mobile */
+@media screen and (max-height: 700px) {
+    .carousel-wrapper {
+        min-height: 450px;
+    }
+    
+    .carousel-image {
+        height: 150px;
+    }
+    
+    .carousel-image img {
+        height: 130px;
     }
 }
