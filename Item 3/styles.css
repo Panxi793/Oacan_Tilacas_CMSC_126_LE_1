@@ -1,0 +1,495 @@
+/* Global Styles & Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Korean Yangyeom Chicken-inspired color scheme */
+    --primary-color: #e7502d; /* Spicy red-orange color of Yangyeom sauce */
+    --secondary-color: #8c3a1c; /* Darker spicy brown-red */
+    --background-color: #fdf6e9; /* Warm cream background like fried chicken */
+    --text-color: #3a3229; /* Deep warm brown */
+    --light-accent: #fff1db; /* Light golden like fried chicken exterior */
+    --dark-accent: #7d391e; /* Deep red-brown like caramelized sauce */
+    --accent-yellow: #f9c74f; /* Golden color like crispy chicken */
+    --accent-green: #4c9173; /* Green onion garnish color */
+    --focus-outline: 3px solid var(--secondary-color);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Accessibility-focused styles */
+:focus {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    z-index: 100;
+    transition: top 0.3s;
+    text-decoration: none;
+    border-radius: 0 0 5px 5px;
+}
+
+.skip-to-content:focus {
+    top: 0;
+    outline: var(--focus-outline);
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 30px 0;
+    background-color: var(--light-accent);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--dark-accent);
+}
+
+/* Introduction and Recipe Info Section */
+.recipe-intro-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-intro {
+    flex: 1 1 400px;
+}
+
+.recipe-intro-image {
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+.recipe-intro-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--light-accent);
+}
+
+.recipe-info-table {
+    flex: 1 1 300px;
+}
+
+.recipe-meta {
+    margin-top: 20px;
+    font-style: italic;
+    color: #666;
+}
+
+.recipe-info-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recipe-info-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.recipe-info-table td:first-child {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* Ingredients Section */
+.ingredients-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--accent-yellow);
+}
+
+.ingredients-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.ingredients-column {
+    flex: 1 1 300px;
+}
+
+.ingredients-column h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--light-accent);
+    padding-bottom: 8px;
+}
+
+.ingredients-column ul {
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+.ingredients-column li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 5px;
+}
+
+/* Steps Section */
+.steps-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--dark-accent);
+    font-size: 2rem;
+}
+
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--primary-color);
+}
+
+.carousel-wrapper {
+    position: relative;
+    min-height: 450px; /* Consistent height for all slides */
+    overflow: hidden; /* Hide overflowing content */
+}
+
+/* Carousel Item Styles */
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 1;
+}
+
+/* Active item */
+.carousel-item.active {
+    opacity: 1;
+    z-index: 5;
+}
+
+/* Items sliding left (when "next" button is clicked) */
+.carousel-item.slide-left {
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Items sliding right (when "previous" button is clicked) */
+.carousel-item.slide-right {
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Make the first item active by default */
+.carousel-item:first-child {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 5;
+}
+
+/* Focus styling for better keyboard navigation */
+.carousel-wrapper:focus-within {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 4px;
+}
+
+/* Make sure tab focus is visible */
+.carousel-item:focus-within {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+/* Consistent content layout */
+.carousel-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+
+/* Image container with fixed dimensions */
+.carousel-image {
+    flex: 1 1 350px;
+    text-align: center;
+    padding: 10px;
+    height: 320px; /* Fixed height container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-image img {
+    width: 100%;
+    height: 300px; /* Exact height for all images */
+    object-fit: cover; /* Maintain aspect ratio while filling the container */
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--light-accent);
+}
+
+/* Consistent text sizing */
+.carousel-text {
+    flex: 1 1 350px;
+    padding: 20px; /* Uniform padding */
+}
+
+/* Special case for the "finished" step */
+#finished {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#finished .carousel-content {
+    justify-content: center;
+}
+
+#finished .carousel-text {
+    max-width: 700px;
+}
+
+.start-over-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.start-over-btn:hover, 
+.start-over-btn:focus {
+    background-color: var(--dark-accent);
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.carousel-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.carousel-text {
+    flex: 1 1 350px;
+    padding: 10px;
+}
+
+.carousel-text h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+
+.carousel-text p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Navigation Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.8rem;
+    z-index: 10;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+}
+
+.left-arrow {
+    left: 15px;
+}
+
+.right-arrow {
+    right: 15px;
+}
+
+.arrow:hover,
+.arrow:focus {
+    background: var(--dark-accent);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Focus styles for navigation elements */
+.arrow:focus {
+    outline: var(--focus-outline);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 0;
+    border: none; /* Ensure no border */
+    background: transparent; /* Ensure no background */
+}
+
+.indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ccc;
+    display: block;
+    position: relative;
+}
+
+.indicator:hover,
+.indicator:focus {
+    background: var(--secondary-color);
+}
+
+/* Focus styles for indicators */
+.indicator:focus {
+    outline: var(--focus-outline);
+    transform: scale(1.3);
+}
+
+/* Style active indicators more prominently */
+.indicator.active, 
+.indicator:target {
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--light-accent);
+    border-radius: 8px;
+    margin-top: 40px;
+    color: var(--dark-accent);
+    border-top: 3px solid var(--accent-yellow);
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-item {
+        transition: opacity 0.3s ease;
+        transform: none;
+    }
+    
+    .carousel-item.active,
+    .carousel-item:target {
+        opacity: 1;
+    }
+    
+    .indicator::after {
+        transition: opacity 0.3s;
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .carousel-content {
+        flex-direction: column;
+    }
+    
+    .carousel-wrapper {
+        min-height: 650px;
+    }
+    
+    .carousel-image {
+        height: 270px;
+    }
+    
+    .carousel-image img {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel-wrapper {
+        min-height: 550px;
+    }
+    
+    .carousel-item {
+        padding: 15px;
+    }
+    
+    .carousel-image {
+        height: 220px;
+    }
+    
+    .carousel-image img {
+        height: 200px;
+    }
+}

@@ -12,13 +12,54 @@
         <p>Crispy fried chicken coated in a sweet and spicy sauce</p>
     </header>
 
-    <main id="recipe-carousel">
-        <!-- Introduction -->
-        <section id="introduction" class="carousel-item active">
+    <!-- Introduction and Recipe Info Section -->
+    <section class="recipe-intro-container">
+        <div class="recipe-intro">
             <h2>Introduction</h2>
-            <p>Korean Yangyeom Chicken is a popular Korean dish featuring crispy twice-fried chicken tossed in a sweet, spicy, and sticky sauce. This recipe serves 4 people and takes about 1 hour to prepare.</p>
-            <div class="ingredients">
-                <h3>Ingredients</h3>
+            <p>Korean Yangyeom Chicken is a popular Korean dish featuring crispy twice-fried chicken tossed in a sweet, spicy, and sticky sauce. Perfect for sharing with friends or as a main dish with rice.</p>
+            <div class="recipe-meta">
+                <p><strong>Recipe by:</strong> Chef Kim</p>
+                <p><strong>Updated on:</strong> March 15, 2025</p>
+            </div>
+        </div>
+        
+        <div class="recipe-intro-image">
+            <img src="images/yangyeom-chicken.jpg" alt="Korean Yangyeom Chicken with crispy skin coated in red sauce" 
+                 onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Korean+Yangyeom+Chicken';">
+        </div>
+        
+        <div class="recipe-info-table">
+            <table>
+                <tr>
+                    <td>Prep Time:</td>
+                    <td>20 minutes</td>
+                </tr>
+                <tr>
+                    <td>Cook Time:</td>
+                    <td>30 minutes</td>
+                </tr>
+                <tr>
+                    <td>Additional Time:</td>
+                    <td>10 minutes</td>
+                </tr>
+                <tr>
+                    <td>Total Time:</td>
+                    <td>1 hour</td>
+                </tr>
+                <tr>
+                    <td>Servings:</td>
+                    <td>4 people</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section class="ingredients-section">
+        <h2>Ingredients</h2>
+        <div class="ingredients-container">
+            <div class="ingredients-column">
+                <h3>For the Chicken:</h3>
                 <ul>
                     <li>2 lbs (900g) chicken wings or boneless chicken thighs</li>
                     <li>1 cup potato starch or cornstarch</li>
@@ -27,7 +68,8 @@
                     <li>1 tsp garlic powder</li>
                     <li>Oil for deep frying</li>
                 </ul>
-                
+            </div>
+            <div class="ingredients-column">
                 <h3>For the Yangyeom Sauce:</h3>
                 <ul>
                     <li>4 tbsp gochujang (Korean red pepper paste)</li>
@@ -42,122 +84,317 @@
                     <li>2 green onions, chopped for garnish</li>
                 </ul>
             </div>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Ingredients for Korean Yangyeom Chicken laid out on a cutting board]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step1" class="next-btn">Begin Cooking</a>
-            </nav>
-        </section>
+        </div>
+    </section>
 
-        <!-- Step 1 -->
-        <section id="step1" class="carousel-item">
-            <h2>Step 1: Prepare the Chicken</h2>
-            <p>Pat the chicken pieces dry with paper towels. In a large bowl, mix the chicken with salt, pepper, and garlic powder, ensuring each piece is well-seasoned.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Seasoned chicken pieces in a bowl]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#introduction" class="prev-btn">Previous Step</a>
-                <a href="#step2" class="next-btn">Next Step</a>
-            </nav>
-        </section>
+    <!-- Carousel Section -->
+    <h2 class="steps-heading">Cooking Steps</h2>
+    <div class="carousel-container" role="region" aria-label="Recipe step-by-step instructions">
+        <div class="carousel-wrapper" id="recipe-carousel" tabindex="0">
+            
+            <!-- Step 1 -->
+            <section id="step1" class="carousel-item active">
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img src="images/step1.jpg" alt="Seasoned chicken pieces in a bowl" 
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Step+1:+Prepare+Chicken';">
+                    </div>
+                    <div class="carousel-text">
+                        <h3>Step 1: Prepare the Chicken</h3>
+                        <p>Pat the chicken pieces dry with paper towels. In a large bowl, mix the chicken with salt, pepper, and garlic powder, ensuring each piece is well-seasoned.</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Step 2 -->
-        <section id="step2" class="carousel-item">
-            <h2>Step 2: Coat with Starch</h2>
-            <p>Place the potato starch in a separate bowl. Dredge each chicken piece in the starch, shaking off excess. Make sure each piece is evenly coated for maximum crispiness.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Chicken pieces being coated in starch]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step1" class="prev-btn">Previous Step</a>
-                <a href="#step3" class="next-btn">Next Step</a>
-            </nav>
-        </section>
+            <!-- Step 2 -->
+            <section id="step2" class="carousel-item">
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img src="images/step2.jpg" alt="Chicken pieces being coated in starch" 
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Step+2:+Coat+with+Starch';">
+                    </div>
+                    <div class="carousel-text">
+                        <h3>Step 2: Coat with Starch</h3>
+                        <p>Place the potato starch in a separate bowl. Dredge each chicken piece in the starch, shaking off excess. Make sure each piece is evenly coated for maximum crispiness.</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Step 3 -->
-        <section id="step3" class="carousel-item">
-            <h2>Step 3: First Fry</h2>
-            <p>Heat oil to 340°F (170°C) in a deep fryer or large pot. Fry the chicken in batches for 5-6 minutes until lightly golden. Remove and place on a wire rack to drain. This initial fry cooks the chicken through.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Chicken pieces during first fry]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step2" class="prev-btn">Previous Step</a>
-                <a href="#step4" class="next-btn">Next Step</a>
-            </nav>
-        </section>
+            <!-- Step 3 -->
+            <section id="step3" class="carousel-item">
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img src="images/step3.jpg" alt="Chicken pieces during first fry" 
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Step+3:+First+Fry';">
+                    </div>
+                    <div class="carousel-text">
+                        <h3>Step 3: First Fry</h3>
+                        <p>Heat oil to 340°F (170°C) in a deep fryer or large pot. Fry the chicken in batches for 5-6 minutes until lightly golden. Remove and place on a wire rack to drain.</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Step 4 -->
-        <section id="step4" class="carousel-item">
-            <h2>Step 4: Second Fry</h2>
-            <p>Increase oil temperature to 375°F (190°C). Return the chicken for a second fry for 2-3 minutes until deeply golden and extra crispy. Remove and drain on a clean wire rack.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Chicken pieces during second fry, looking golden and crispy]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step3" class="prev-btn">Previous Step</a>
-                <a href="#step5" class="next-btn">Next Step</a>
-            </nav>
-        </section>
+            <!-- Step 4 -->
+            <section id="step4" class="carousel-item">
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img src="images/step4.jpg" alt="Chicken pieces during second fry, looking golden and crispy" 
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Step+4:+Second+Fry';">
+                    </div>
+                    <div class="carousel-text">
+                        <h3>Step 4: Second Fry</h3>
+                        <p>Increase oil temperature to 375°F (190°C). Return the chicken for a second fry for 2-3 minutes until deeply golden and extra crispy. Remove and drain on a clean wire rack.</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Step 5 -->
-        <section id="step5" class="carousel-item">
-            <h2>Step 5: Prepare the Sauce</h2>
-            <p>In a saucepan over medium heat, combine gochujang, soy sauce, honey, brown sugar, rice vinegar, minced garlic, and ginger. Stir until the sauce begins to bubble and thicken, about 3-4 minutes. Remove from heat and stir in sesame oil.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Yangyeom sauce bubbling in a pan]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step4" class="prev-btn">Previous Step</a>
-                <a href="#step6" class="next-btn">Next Step</a>
-            </nav>
-        </section>
+            <!-- Step 5 -->
+            <section id="step5" class="carousel-item">
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img src="images/step5.jpg" alt="Yangyeom sauce bubbling in a pan" 
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Step+5:+Prepare+Sauce';">
+                    </div>
+                    <div class="carousel-text">
+                        <h3>Step 5: Prepare the Sauce</h3>
+                        <p>In a saucepan over medium heat, combine gochujang, soy sauce, honey, brown sugar, rice vinegar, minced garlic, and ginger. Stir until the sauce begins to bubble and thicken.</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Step 6 -->
-        <section id="step6" class="carousel-item">
-            <h2>Step 6: Coat the Chicken</h2>
-            <p>Place the fried chicken in a large bowl. Pour the hot sauce over the chicken and toss until all pieces are evenly coated. Work quickly while both chicken and sauce are still hot.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Tossing fried chicken in Yangyeom sauce]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step5" class="prev-btn">Previous Step</a>
-                <a href="#step7" class="next-btn">Next Step</a>
-            </nav>
-        </section>
+            <!-- Step 6 -->
+            <section id="step6" class="carousel-item">
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img src="images/step6.jpg" alt="Tossing fried chicken in Yangyeom sauce" 
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Step+6:+Coat+Chicken';">
+                    </div>
+                    <div class="carousel-text">
+                        <h3>Step 6: Coat the Chicken</h3>
+                        <p>Place the fried chicken in a large bowl. Pour the hot sauce over the chicken and toss until all pieces are evenly coated. Work quickly while both chicken and sauce are still hot.</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Step 7 -->
-        <section id="step7" class="carousel-item">
-            <h2>Step 7: Garnish and Serve</h2>
-            <p>Transfer the coated chicken to a serving plate. Sprinkle with toasted sesame seeds and chopped green onions. Serve immediately while hot and crispy.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Finished Korean Yangyeom Chicken garnished with sesame seeds and green onions]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step6" class="prev-btn">Previous Step</a>
-                <a href="#complete" class="next-btn">Finish</a>
-            </nav>
-        </section>
+            <!-- Step 7 -->
+            <section id="step7" class="carousel-item">
+                <div class="carousel-content">
+                    <div class="carousel-image">
+                        <img src="images/step7.jpg" alt="Finished Korean Yangyeom Chicken garnished with sesame seeds and green onions" 
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Step+7:+Garnish';">
+                    </div>
+                    <div class="carousel-text">
+                        <h3>Step 7: Garnish and Serve</h3>
+                        <p>Transfer the coated chicken to a serving plate. Sprinkle with toasted sesame seeds and chopped green onions. Serve immediately while hot and crispy.</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Complete -->
-        <section id="complete" class="carousel-item">
-            <h2>Complete!</h2>
-            <p>Congratulations! Your Korean Yangyeom Chicken is ready to enjoy. It's best served hot with pickled radish or kimchi on the side. For an authentic Korean meal, pair with steamed rice and cold beer.</p>
-            <div class="image-placeholder" aria-hidden="true">
-                <p>[Image: Full meal spread of Korean Yangyeom Chicken with sides]</p>
-            </div>
-            <nav class="carousel-navigation">
-                <a href="#step7" class="prev-btn">Previous Step</a>
-                <a href="#introduction" class="restart-btn">Start Over</a>
-            </nav>
-        </section>
-    </main>
+            <!-- Finished Step -->
+            <section id="finished" class="carousel-item">
+                <div class="carousel-content">
+                    <div class="carousel-text">
+                        <h3>Cooking Complete!</h3>
+                        <p>Congratulations! You've successfully prepared Korean Yangyeom Chicken. Enjoy your delicious crispy chicken with its sweet and spicy sauce. This dish pairs well with rice or as part of a Korean feast.</p>
+                        <button class="start-over-btn">START OVER</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation Buttons -->
+            <button class="arrow left-arrow" id="prev-btn" aria-label="Previous step">&#10094;</button>
+            <button class="arrow right-arrow" id="next-btn" aria-label="Next step">&#10095;</button>
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+            <a href="#step1" class="indicator" aria-label="Go to step 1" data-step="Prepare Chicken"></a>
+            <a href="#step2" class="indicator" aria-label="Go to step 2" data-step="Coat with Starch"></a>
+            <a href="#step3" class="indicator" aria-label="Go to step 3" data-step="First Fry"></a>
+            <a href="#step4" class="indicator" aria-label="Go to step 4" data-step="Second Fry"></a>
+            <a href="#step5" class="indicator" aria-label="Go to step 5" data-step="Prepare Sauce"></a>
+            <a href="#step6" class="indicator" aria-label="Go to step 6" data-step="Coat Chicken"></a>
+            <a href="#step7" class="indicator" aria-label="Go to step 7" data-step="Garnish"></a>
+            <a href="#finished" class="indicator" aria-label="Go to finished" data-step="Complete"></a>
+        </div>
+    </div>
 
     <footer>
         <p>Accessible Cooking Guide | Navigate with keyboard using Tab and Enter</p>
         <p>Use arrow keys or Tab to move between steps</p>
     </footer>
+
+    <!-- JavaScript for Carousel Navigation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.carousel-item');
+            const indicators = document.querySelectorAll('.indicator');
+            let currentIndex = 0;
+            
+            // Initialize - hide all items except the first one
+            items.forEach((item, index) => {
+                if (index === 0) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                    // Position non-active items to the right initially
+                    item.style.transform = 'translateX(100%)';
+                }
+            });
+            
+            // Get index from id
+            function getIndexFromId(id) {
+                if (id === 'finished') return items.length - 1;
+                const match = id.match(/step(\d+)/);
+                return match ? parseInt(match[1]) - 1 : 0;
+            }
+            
+            // Update indicators based on current target
+            function updateIndicators(targetId) {
+                const index = getIndexFromId(targetId);
+                indicators.forEach((indicator, i) => {
+                    indicator.classList.toggle('active', i === index);
+                });
+                return index;
+            }
+            
+            // Function to show a specific item with animation
+            function showItem(index, direction) {
+                if (index < 0 || index >= items.length) return;
+                if (index === currentIndex) return; // Don't do anything if clicking the current step
+                
+                // Determine direction if not specified
+                if (!direction) {
+                    direction = index > currentIndex ? 'right' : 'left';
+                }
+                
+                // Get current and next items
+                const currentItem = items[currentIndex];
+                const nextItem = items[index];
+                
+                // Reset any existing transforms
+                nextItem.style.transition = 'none';
+                
+                // Position the next item based on direction
+                if (direction === 'right') {
+                    nextItem.style.transform = 'translateX(100%)';
+                } else {
+                    nextItem.style.transform = 'translateX(-100%)';
+                }
+                
+                // Force reflow to ensure the positioning takes effect
+                void nextItem.offsetWidth;
+                
+                // Re-enable transitions
+                nextItem.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+                currentItem.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+                
+                // Slide current item out in opposite direction
+                if (direction === 'right') {
+                    currentItem.style.transform = 'translateX(-100%)';
+                } else {
+                    currentItem.style.transform = 'translateX(100%)';
+                }
+                currentItem.style.opacity = '0';
+                currentItem.classList.remove('active');
+                
+                // Slide new item in
+                nextItem.style.transform = 'translateX(0)';
+                nextItem.style.opacity = '1';
+                nextItem.classList.add('active');
+                
+                const targetId = index < items.length - 1 ? `step${index + 1}` : 'finished';
+                
+                // Update URL without adding to browser history
+                history.replaceState(null, null, `#${targetId}`);
+                
+                // Update current index
+                currentIndex = index;
+                
+                // Update indicator states
+                updateIndicators(targetId);
+            }
+            
+            // Next button 
+            document.getElementById('next-btn').addEventListener('click', () => {
+                if (currentIndex < items.length - 1) {
+                    showItem(currentIndex + 1, 'right');
+                }
+            });
+            
+            // Previous button
+            document.getElementById('prev-btn').addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    showItem(currentIndex - 1, 'left');
+                }
+            });
+            
+            // Handle keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') {
+                    if (currentIndex < items.length - 1) {
+                        showItem(currentIndex + 1, 'right');
+                    }
+                } else if (e.key === 'ArrowLeft') {
+                    if (currentIndex > 0) {
+                        showItem(currentIndex - 1, 'left');
+                    }
+                }
+            });
+            
+            // Handle indicator clicks
+            indicators.forEach((indicator, i) => {
+                indicator.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent default behavior
+                    const direction = i > currentIndex ? 'right' : 'left';
+                    showItem(i, direction);
+                });
+            });
+            
+            // Handle start over button
+            document.querySelector('.start-over-btn').addEventListener('click', (e) => {
+                e.preventDefault();
+                showItem(0, 'left');
+            });
+            
+            // Set up when the page loads
+            window.addEventListener('load', () => {
+                // Check for hash in URL
+                if (window.location.hash) {
+                    const hash = window.location.hash.substring(1);
+                    const index = getIndexFromId(hash);
+                    // Only update if it's a valid index and not already the current index
+                    if (index >= 0 && index < items.length && index !== currentIndex) {
+                        // Handle initial load without animation
+                        items.forEach((item, i) => {
+                            item.style.transition = 'none';
+                            if (i === index) {
+                                item.classList.add('active');
+                                item.style.transform = 'translateX(0)';
+                                item.style.opacity = '1';
+                            } else {
+                                item.classList.remove('active');
+                                item.style.transform = 'translateX(100%)';
+                                item.style.opacity = '0';
+                            }
+                        });
+                        currentIndex = index;
+                        updateIndicators(hash);
+                        // Re-enable transitions after a brief delay
+                        setTimeout(() => {
+                            items.forEach(item => {
+                                item.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+                            });
+                        }, 50);
+                    }
+                } else {
+                    // Default to first step if no hash
+                    history.replaceState(null, null, '#step1');
+                    currentIndex = 0;
+                    indicators[0].classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
