@@ -43,44 +43,77 @@
     margin: 0 5px;
   }
   
-  .tabmenu {
+  .tabs-container {
     display: flex;
-    padding-right: 39px;
-    justify-content: flex-end;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    justify-content: space-between; /* Pushes left-tabs to the left and tabmenu to the right */
+    align-items: center; /* Ensures everything is aligned properly */
+    width: 100%; /* Makes sure it spans the full width */
+    background-color: #f6f6f6;
+    padding: 6px;
+    border-bottom: 1px solid #ccc;
+}
+
+.left-tabs {
+    display: flex;
     align-items: center;
-    align-content: center;
-  }
-  
-  .tabmenu li {
-    display: inline;
-    font-weight: bold;
-    margin: 0px 3px;
-    font-weight: bold;
-  }
-  
-  .tabmenu li a {
-    padding: 2px 6px 0 6px;
+    flex: 1;
+    margin-left: 210px; 
+    margin-bottom: -20px;
+}
+
+.left-tabs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.left-tabs li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.left-tabs li a {
+    display: block;
+    padding: 5px 10px;
     background-color: #eff7ff;
+    border: 1px solid #5f99cf;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); 
+}
+
+.left-tabs li.selected a {
+    background-color: white;
+    color: orangered;
+    border: 1px solid #5f99cf;
+    box-shadow: none; 
+}
+
+.tabmenu {
+    display: flex;
+    flex: 1; /* Allows it to take up necessary space */
+    justify-content: flex-end; /* Aligns it to the far right */
+    align-items: center;
+    padding-right: 39px;
+    margin: 0;
+}
+
+.tabmenu li {
+    display: inline-block;
+    font-weight: bold;
+    margin: 0 3px;
+}
+
+.tabmenu li a {
     padding: 5px 10px;
     background-color: #eff7ff;
     text-decoration: none;
     color: #333;
-  }
-  
-  .tabmenu li.selected a {
-    color: orangered;
-    background-color: white;
-    border: 1px solid #5f99cf;
-    border-bottom: 1px solid white;
-    z-index: 100;
-    color: orangered;
-    background-color: white;
-    border: 1px solid #5f99cf;
-    border-bottom: 1px solid white;
-    z-index: 2;
-  }
+    border-radius: 3px;
+}
   
   .header-top {
     display: flex;
