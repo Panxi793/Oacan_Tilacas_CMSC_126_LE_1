@@ -199,6 +199,39 @@
   li:last-child .sidenav {
     color: blue 
 }
+
+.sidebar-box {
+    background-color: #dcedff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    padding: 8px;
+  }
+  .sidebar-title {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: blue;
+  }
+  .sidebar-box p {
+    color: lightslategray;
+  }
+  .ad {
+    color: lightslategray;
+    font-size: 10px;
+    margin-top:-5px;
+  }
+
+  .ad-text{
+    margin-left: 80px;
+  }
+  
+  .tiny-ad {
+    display: block;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    width: 180px; 
+    height: auto; 
+  }
   
   body {
     font-family: Arial, sans-serif;
@@ -222,19 +255,20 @@
   }
   
   .container {
-    display: grid;
-    grid-template-columns: 200px auto 700px;
-    width: 100%;
-    height: 100vh; /* Keep this to make it viewport height */
-    max-width: 100vw;
-    margin: 0;
-    overflow: hidden; /* Prevent container from scrolling */
-  }
-  
-  .content, .right {
-    overflow: hidden; /* Prevent scrolling in main content and right sidebar */
-    max-height: 100%; /* Limit height to container */
-  }
+  display: grid;
+  grid-template-columns: 200px auto 700px;
+  width: 100%;
+  height: auto; /* Changed from 100vh to auto */
+  min-height: 100vh; /* Added min-height to ensure it at least fills the viewport */
+  max-width: 100vw;
+  margin: 0;
+  overflow: visible; /* Changed from hidden to visible */
+}
+
+.content, .right {
+  overflow: visible; /* Changed from hidden to visible */
+  max-height: none; /* Removed max-height limitation */
+}
   
   .sidebar {
     border: 1px solid rgb(123, 123, 123);
@@ -246,7 +280,7 @@
     top: 50px;
     left: 0;
     width: 200px;
-    height: 100vh; 
+    height: auto;
     padding: 10px;
     border: 1px solid rgb(123, 123, 123);
     z-index: 10;
@@ -279,7 +313,7 @@
     text-decoration: none;
     font-weight: bold;
     color:  #444444;
-    font-size: 13px;
+    font-size: 11px;
   }
   
   .left nav ul li:hover {
