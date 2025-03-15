@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Old Reddit Replica</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <!-- Left Section: Logo + Primary Nav -->
+      <div class="topbar-left">
+        <a href="#" class="reddit-icon" aria-label="Reddit Home">
+          <img src="https://via.placeholder.com/35/CEE3F8?text=R" alt="Reddit Logo" />
+        </a>
+        <ul class="top-nav">
+          <li><a href="#">hot</a></li>
+          <li><a href="#">new</a></li>
+          <li><a href="#">controversial</a></li>
+          <li><a href="#">top</a></li>
+          <li><a href="#">gilded</a></li>
+          <li><a href="#">wiki</a></li>
+        </ul>
+      </div>
+
+      <!-- Right Section: Search + User Info -->
+      <div class="topbar-right">
+        <form class="search-form" action="#" method="get">
+          <input type="text" class="search-input" placeholder="search" aria-label="Search" />
+          <button class="search-button" aria-label="Search">Go</button>
+        </form>
+        <div class="user-links">
+          <a href="#">login</a>
+          <span class="separator">|</span>
+          <a href="#">sign up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary Navigation (Subreddits row) -->
+  <div class="subreddits-bar">
+    <ul class="subreddits-list">
+      <li><a href="#">AskReddit</a></li>
+      <li><a href="#">Pics</a></li>
+      <li><a href="#">Technology</a></li>
+      <li><a href="#">Funny</a></li>
+      <li><a href="#">WorldNews</a></li>
+      <li><a href="#">Videos</a></li>
+      <li><a href="#">WTF</a></li>
+      <li><a href="#">Gaming</a></li>
+      <li><a href="#">aww</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Container -->
+  <div class="content-container">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar-left" aria-label="Left Sidebar">
+      <ul class="subreddit-list">
+        <!-- Sidebar items as simple links -->
+        <li><a href="#">FRONT PAGE</a></li>
+        <li><a href="#">PICS</a></li>
+        <li><a href="#">SCIENCE</a></li>
+        <li><a href="#">TECHNOLOGY</a></li>
+        <li><a href="#">ASK REDDIT</a></li>
+        <li><a href="#">FUNNY</a></li>
+        <li><a href="#">WTF?</a></li>
+        <li><a href="#">IAMA</a></li>
+        <li><a href="#">WORLD NEWS</a></li>
+        <li><a href="#">TODAYILEARNED</a></li>
+        <li><a href="#">WEBDESIGN</a></li>
+        <li><a href="#">ATHEIST</a></li>
+        <li><a href="#">ATT???</a></li>
+        <li><a href="#">(MORE)</a></li>
+      </ul>
+
+      <!-- “Submit a link” Box -->
+      <div class="sidebar-box">
+        <h2 class="sidebar-title">Submit a link</h2>
+        <p>
+          Share something new, interesting: news article, blog entry, video, pictures...
+        </p>
+      </div>
+
+      <!-- “Croato Community” Box -->
+      <div class="sidebar-box">
+        <h2 class="sidebar-title">Croato Community</h2>
+        <p>
+          Work in progress. There's nothing in the rules (except hold on the side).
+        </p>
+        <img src="https://via.placeholder.com/90x90/FFFFFF/000000?text=Ad" alt="Tiny Ad Figurine" class="tiny-ad" />
+        <p>tiniest ad in the world</p>
+      </div>
+    </aside>
+
+    <!-- MAIN FEED -->
+    <main class="main-feed" aria-label="Main Content">
+      <!-- Post #1 -->
+      <article class="post">
+        <div class="post-votes">
+          <button class="arrow up" aria-label="Upvote"></button>
+          <div class="score">215</div>
+          <button class="arrow down" aria-label="Downvote"></button>
+        </div>
+        <div class="post-body">
+          <h3 class="post-title"><a href="#">What do you call a guy who watched the Super Bowl alone?</a></h3>
+          <p class="tagline">
+            submitted <strong>2 hours ago</strong> by <a href="#">u/jokeThrower</a> to <a href="#">r/Jokes</a>
+            <span class="nsfw-tag">SFW</span>
+          </p>
+          <p class="post-meta">
+            <a href="#" class="comments-link">232 comments</a> | <a href="#">share</a> | <a href="#">save</a> | <a href="#">hide</a>
+          </p>
+        </div>
+      </article>
+
+      <!-- Post #2 -->
+      <article class="post">
+        <div class="post-votes">
+          <button class="arrow up" aria-label="Upvote"></button>
+          <div class="score">174</div>
+          <button class="arrow down" aria-label="Downvote"></button>
+        </div>
+        <div class="post-body">
+          <h3 class="post-title"><a href="#">The Chrome extension to block major brand posts and search engines from tracking you is now available!</a></h3>
+          <p class="tagline">
+            submitted <strong>4 hours ago</strong> by <a href="#">u/techEnthusiast</a> to <a href="#">r/technology</a>
+            <span class="nsfw-tag">SFW</span>
+          </p>
+          <p class="post-meta">
+            <a href="#" class="comments-link">89 comments</a> | <a href="#">share</a> | <a href="#">save</a> | <a href="#">hide</a>
+          </p>
+        </div>
+      </article>
+
+      <!-- Post #3 -->
+      <article class="post">
+        <div class="post-votes">
+          <button class="arrow up" aria-label="Upvote"></button>
+          <div class="score">49</div>
+          <button class="arrow down" aria-label="Downvote"></button>
+        </div>
+        <div class="post-body">
+          <h3 class="post-title"><a href="#">Thanks, Sally! That was the best book ever.</a></h3>
+          <p class="tagline">
+            submitted <strong>21 hours ago</strong> by <a href="#">u/booklover</a> to <a href="#">r/books</a>
+            <span class="nsfw-tag">SFW</span>
+          </p>
+          <p class="post-meta">
+            <a href="#" class="comments-link">7 comments</a> | <a href="#">share</a> | <a href="#">save</a> | <a href="#">hide</a>
+          </p>
+        </div>
+      </article>
+
+      <!-- Post #4 -->
+      <article class="post">
+        <div class="post-votes">
+          <button class="arrow up" aria-label="Upvote"></button>
+          <div class="score">8</div>
+          <button class="arrow down" aria-label="Downvote"></button>
+        </div>
+        <div class="post-body">
+          <h3 class="post-title"><a href="#">Reddit, if you could go back to the beginning of high school or college, how differently would you do it?</a></h3>
+          <p class="tagline">
+            submitted <strong>12 hours ago</strong> by <a href="#">u/thoughtfulUser</a> to <a href="#">r/AskReddit</a>
+            <span class="nsfw-tag">SFW</span>
+          </p>
+          <p class="post-meta">
+            <a href="#" class="comments-link">4 comments</a> | <a href="#">share</a> | <a href="#">save</a> | <a href="#">hide</a>
+          </p>
+        </div>
+      </article>
+
+      <!-- Post #5 -->
+      <article class="post">
+        <div class="post-votes">
+          <button class="arrow up" aria-label="Upvote"></button>
+          <div class="score">232</div>
+          <button class="arrow down" aria-label="Downvote"></button>
+        </div>
+        <div class="post-body">
+          <h3 class="post-title"><a href="#">I AM the guy who created this design AMA</a></h3>
+          <p class="tagline">
+            submitted <strong>6 hours ago</strong> by <a href="#">u/DesignerDude</a> to <a href="#">r/IAmA</a>
+          </p>
+          <p class="post-meta">
+            <a href="#" class="comments-link">232 comments</a> | <a href="#">share</a> | <a href="#">save</a> | <a href="#">hide</a>
+          </p>
+        </div>
+      </article>
+    </main>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="sidebar-right" aria-label="Right Sidebar">
+      <div class="side-card">
+        <h2>I AM the guy who created this design AMA</h2>
+        <p>232 points (98% upvoted)</p>
+        <p>Here is some extra context about this post. Feel free to AMA below!</p>
+        <a href="#" class="button">Join Discussion</a>
+      </div>
+      <div class="side-card">
+        <h2>Advertisement</h2>
+        <img src="https://via.placeholder.com/200x200/FFFFFF/000000?text=Ad+Space" alt="Advertisement">
+      </div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <ul class="footer-links">
+      <li><a href="#">help</a></li>
+      <li><a href="#">rules</a></li>
+      <li><a href="#">contact us</a></li>
+      <li><a href="#">reddit coins</a></li>
+      <li><a href="#">reddit premium</a></li>
+      <li><a href="#">about</a></li>
+      <li><a href="#">blog</a></li>
+    </ul>
+    <p class="footer-disclaimer">
+      © 2025 Reddit Inc. All rights reserved.
+    </p>
+  </footer>
+
+</body>
+</html>
