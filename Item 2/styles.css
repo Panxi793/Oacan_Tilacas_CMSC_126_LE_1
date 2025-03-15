@@ -231,6 +231,14 @@ a:hover {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><polygon points="5,10 0,0 10,0" fill="%230079D3"/></svg>');
 }
 
+.rank {
+    font-size: 13px;
+    margin-top:24px;
+    margin-right: 4px;
+    color: #c6c6c6;
+    min-width: 20px;
+    text-align: center;
+  }
 .score {
   font-weight: bold;
   color: #666;
